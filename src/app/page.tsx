@@ -90,7 +90,7 @@ const Home = () => {
   return (
     <>
       <div className="dark:bg-gray-900 bg-gray-100 min-h-screen pb-24 text-slate-800 dark:text-white transition ease-in-out duration-500">
-        <div className="container mx-auto max-w-2xl space-y-6">
+        <div className="container mx-auto max-w-2xl space-y-6 px-6">
           <div className="h-[30rem] overflow-hidden -mb-6">
             <Image
               src="/oner-light.png"
