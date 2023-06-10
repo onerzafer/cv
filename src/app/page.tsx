@@ -49,7 +49,6 @@ const skills = [
   'Team Collaboration',
   'Problem Solving',
   'Communication Skills',
-  'Mentoring',
   'Agile Project Management',
   'Client Interaction',
   'Documentation',

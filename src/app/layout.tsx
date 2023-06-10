@@ -3,6 +3,7 @@ import './globals.css';
 import { Roboto } from 'next/font/google';
 import { ReactNode, useLayoutEffect, useState } from 'react';
 import { win } from '@/safe-window';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Roboto({
   weight: ['400', '700'],
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={className}>
       <body className={inter.className}>{children}</body>
+      <Analytics />
     </html>
   );
 }
