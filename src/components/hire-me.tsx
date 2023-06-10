@@ -3,7 +3,9 @@ import React from 'react';
 
 export const HireMe = () => {
   const hireMe = () => {
-    window.location.href = 'mailto:onerzfr@gmail.com?subject=We need you!';
+    if (window?.location?.href) {
+      window.location.href = 'mailto:onerzfr@gmail.com?subject=We need you!';
+    }
   };
 
   return (

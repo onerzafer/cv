@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   useLayoutEffect(() => {
     setClassName(window?.localStorage?.getItem('theme') || 'light');
-    window.addEventListener('theme', () => {
+    window?.addEventListener('theme', () => {
       setClassName(window?.localStorage?.getItem('theme') || 'light');
     });
   }, [setClassName]);
