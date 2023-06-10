@@ -2,6 +2,7 @@ import React from 'react';
 import { DarkModeToggle } from '@/components/dark-mode-toggle';
 import { MapPinIcon } from '@heroicons/react/24/outline';
 import { HireMe } from '@/components/hire-me';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Öner Zafer - Senior React Engineer',
@@ -92,10 +93,12 @@ const Home = () => {
       <div className="dark:bg-gray-900 bg-gray-100 min-h-screen pb-24 text-slate-800 dark:text-white transition ease-in-out duration-500">
         <div className="container mx-auto max-w-2xl space-y-6">
           <div className="h-[30rem] overflow-hidden -mb-6">
-            <img
-              src="oner-light.png"
+            <Image
+              src="/oner-light.png"
               alt="Öner Zafer"
               className="w-full object-contain -mb-6 dark:invert"
+              width={2048}
+              height={2048}
             />
           </div>
           <div className="relative border-t border-black/10 dark:border-white/10">
@@ -161,17 +164,17 @@ const Home = () => {
             </p>
             <p>
               If you are a forward-thinking company seeking a senior or lead
-              React engineer for remote work, let's connect. Together, we can
-              create exceptional user experiences and drive technological
+              React engineer for remote work, let&#39;s connect. Together, we
+              can create exceptional user experiences and drive technological
               advancements.
             </p>
             <p>
-              I am excited to contribute my skills and leadership to your team's
-              success.
+              I am excited to contribute my skills and leadership to your
+              team&#39;s success.
             </p>
           </div>
           <div className="rounded-lg p-6 bg-slate-50 dark:bg-slate-600">
-            <h2 className="text-xl font-bold mb-4">I'm open for</h2>
+            <h2 className="text-xl font-bold mb-4">I&#39;m open for</h2>
             <div className="flex align-middle justify-start gap-1 flex-wrap">
               {openFor.map((open) => (
                 <div
@@ -248,7 +251,7 @@ const Home = () => {
             </ul>
           </div>
           <h2 className="text-3xl font-bold mb-4 pt-12">
-            I'm available immediately!
+            I&#39;m available immediately!
           </h2>
           <HireMe />
         </div>
