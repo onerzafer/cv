@@ -1,10 +1,11 @@
 'use client';
 import React from 'react';
+import { win } from '@/safe-window';
 
 export const HireMe = () => {
   const hireMe = () => {
-    if (window?.location?.href) {
-      window.location.href = 'mailto:onerzfr@gmail.com?subject=We need you!';
+    if (win?.location?.href) {
+      win.location.href = 'mailto:onerzfr@gmail.com?subject=We need you!';
     }
   };
 

@@ -2,15 +2,16 @@
 
 import { Switch } from '@headlessui/react';
 import React, { useLayoutEffect, useState } from 'react';
+import { win } from '@/safe-window';
 
 export const DarkModeToggle = () => {
   const [enabled, setEnabled] = useState(
-    window?.localStorage?.getItem('theme') === 'dark',
+    win?.localStorage?.getItem('theme') === 'dark',
   );
 
   useLayoutEffect(() => {
-    window?.localStorage?.setItem('theme', enabled ? 'dark' : 'light');
-    window.dispatchEvent(new Event('theme'));
+    win?.localStorage?.setItem('theme', enabled ? 'dark' : 'light');
+    win.dispatchEvent(new Event('theme'));
   }, [enabled]);
 
   return (
