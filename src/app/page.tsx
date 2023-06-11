@@ -127,7 +127,7 @@ const Home = () => {
                   Ask for CV
                 </CallToAction>
                 <CallToAction subject="We need you!" primary>
-                  Hire me
+                  Hire me!
                 </CallToAction>
               </div>
             </div>
@@ -264,10 +264,10 @@ const Home = () => {
               Hire me!
             </CallToAction>
             <CallToAction subject="Can we get your CV?">
-              Ask for CV
+              Ask for the CV
             </CallToAction>
             <CallToAction subject="Can we get your rates?">
-              Ask for quote
+              Ask for a quote
             </CallToAction>
           </div>
         </div>
