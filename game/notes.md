@@ -61,6 +61,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - The player sets the tax rate per city. If a city dislikes it (unhappy population), it can rebel and go independent through an uprising, becoming a separate city again that the player may have to reconquer.
 - A rebelling city gets its own army, built from its own economy.
 - Rebellion is gradual (unrest builds up over turns) and can be prevented by garrisoning troops in the city and by welfare spending.
+- Garrison troops are split off from the player's battle army, so every garrison weakens the army available for the next fight.
 - Rebel cities get back their original colour.
 - A rebel army starts weak and hardens each turn (more training and strength), so reconquering sooner is easier. This pushes the player to act quickly against uprisings.
 - A city's army depends on its richness and on time. If we leave a city alone, it may spend money, grow and train its army, so it is stronger when we return.
@@ -90,7 +91,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ## Open questions
 - Map: what does it show about each city (size, wealth, nation colour, distance)? Does the player see accurate or only rumoured info about enemy strength?
-- Uprising: what is the visible warning of rising unrest, and what do garrison troops cost (they are not available for battle)?
+- Uprising: what is the visible warning of rising unrest?
 - Does the player also set welfare/service spending per city, or only the tax rate?
 - Is there a win condition? Can the player lose the game (e.g. losing the original city)?
 - Do cities conquer or fight each other, or do they only evolve on their own?
