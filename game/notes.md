@@ -127,7 +127,4 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ## Open questions
 - Last city: if the player always keeps at least one city, can the last city rebel or be taken (and the run ends only via losing the army), or is it simply immune?
-- Lineage: what if a leader has no heir? Does a victorious king's death follow the same succession as a fallen leader's?
-- Do cities conquer or fight each other, or do they only evolve on their own?
-- Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
