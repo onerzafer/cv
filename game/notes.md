@@ -113,11 +113,12 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - As invaders, we earn money by winning battles.
 - Money is spent to train the army, recruit, or feed the soldiers.
 
+- Platform: iOS only, and only Apple Intelligence-capable devices are supported (iOS 26+). This guarantees the on-device Foundation Model is available for the order-parsing fallback and the history narrative, so no non-Apple-Intelligence fallback is needed.
+
 ## Open questions
 - Calendar: how much time passes between a run ending and the next one starting (the example jumps from year 5 of the run to AD 1015)? Is the AD 1000 start fixed?
 - Failed leaders: earlier note says they vanish from history, but the home screen narrative names the fallen leader and city. Do failed leaders appear in the log or not?
 - Which city does the new leader rise from, one of the new random cities?
-- Devices without Apple Intelligence: pre-written narrative text, or no narrative?
 - Can a player be left with no cities but still an army, and keep playing?
 - Do cities conquer or fight each other, or do they only evolve on their own?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
