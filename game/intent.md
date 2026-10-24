@@ -55,8 +55,7 @@ The player fantasy: being a commander who sees the field from above, gives order
 
 ## Risks
 
-- **Parley exploits.** "Join me" or buy-off outcomes could bypass battles. They need low odds, clear costs and per-nation personalities.
-- **The model must not decide outcomes.** It reads tone and claims and phrases replies. Fixed rules, seeded, decide what happens, so results stay testable.
+- **Live logic is less predictable.** Parley is decided by the on-device model playing the enemy, with no rule tables. It can be inconsistent or too easy to sweet-talk, and runs cannot be replayed exactly. Mitigate with persona prompts and scenario testing, not with extra rules.
 - **Simulation cost.** Thousands of fluid-like particles with local combat on a phone is a feasibility risk. Needs an early prototype before the spec locks unit counts.
 - **On-device model limits.** Apple's model has a small context window and limited reasoning, so order parsing needs tight, structured prompts.
 - **Free-form speech ambiguity.** "Right wing" and "middle hold" must map to real groups reliably, including when the player is vague.

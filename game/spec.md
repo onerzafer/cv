@@ -233,29 +233,24 @@ Each season the enemy AI allocates its income across training, recruiting, welfa
 - Ambush and dirty work are allowed for both sides.
 - Messenger speech is heard as bee-like buzzing with the words shown as text. Messengers are never drawn on screen.
 
+**Principle (from the notes): live logic, not mechanics.** There is no odds table, no personality-trait formula and no fixed penalties. The game defines only basic things: units, win and loss, and the few events it can carry out. How the other side thinks, trusts, bargains or lies is decided live by the on-device model, playing the enemy as a character.
+
 **Proposed**
 - One round is one player message followed by one enemy reply. Three rounds is the maximum per encounter (the approach to one target).
-- The player's message goes through the same on-device model as other commands and becomes a structured `ParleyMessage`:
-
-```swift
-@Generable struct ParleyMessage {
-    var intent: ParleyIntent   // demandSurrender, offerJoin, offerTribute, threat, bluff, insult, requestPassage, ruse
-    var terms: Terms           // goldAmount?, join?, leave?, tribute?
-    var claims: [Claim]        // claimed strength or events, true or false
-    var tone: Mood             // same Mood as in 7.1
-}
-```
-
-- **The model never decides outcomes.** A seeded rule table does, using the enemy's personality, its beliefs and the message. The model only reads the player's words and phrases the enemy's reply from structured fields.
-- Enemy personality (per nation, hidden): pride, caution, greed, honour. Context: the enemy's estimate of the player's strength (from its own spies, the player's claims, and what it has seen), its city's happiness and gold, and recent events.
-- Outcomes: accept (join or tribute), refuse, ignore, kill the messenger, counter-offer (gold for leaving), reply with a counter-message, or ambush.
-- Effects: a provoked enemy gets bounded changes to its plan (an early charge, a unit leaving its hill, a reserve revealed, looser formation). Killing a messenger raises the enemy's aggression and makes your army angrier.
-- "Join me": rare, and costly. The city joins the kingdom without a battle but starts with low happiness and high unrest for several seasons. It counts toward victory.
-- Tribute: the player receives gold and the march ends or is redirected. Winnings are lower than a conquest.
-- Ambush (either side): the ambushed side starts the battle with groups out of formation, low cohesion and a morale penalty. The player gets no warning except through intel. The enemy can ambush more readily when its honour is low.
-- The enemy's replies and any ambush it springs on the player use the same rules, with the player's character and army as the target.
-- Parley takes no calendar time. A message sent during a march resolves right away. After the third round no more messages are possible for that approach.
-- Sound: messenger speech is a procedurally generated buzz. Pitch, speed and rhythm carry the tone (short sharp for anger, long smooth for politeness). Each nation has its own timbre. A mute option exists. The text of the reply is always shown.
+- The enemy is a character, not a table. It is given, in plain words: its nation and city (wealth, mood, army as it knows it), what it believes about the player, a short personality description, and the conversation so far. The model answers in character.
+- The game only needs to understand the outcome, so each reply is mapped to one of a few basic events the game can execute:
+  - the enemy accepts to join the player (the city joins the kingdom without a battle);
+  - the enemy pays gold in return for the player leaving (the march ends or is redirected);
+  - the enemy refuses, ignores, or sends a message back (the conversation continues);
+  - the enemy kills the messenger (the conversation ends);
+  - the enemy attacks by surprise (an ambush).
+  The player can likewise ambush or break a truce by ordering an attack during a parley.
+- A provoked, insulted or frightened enemy can also change its stance (more aggressive, more cautious). The model chooses this too. The game turns it into a plain change to how the enemy opens the battle (for example attacking early or holding back).
+- The enemy can open a parley or try tricks toward the player, in the same way.
+- The conversation is kept as a transcript, shown as text with the buzz sound. Nothing in the transcript is a game value; the model's judgement of trust and mood lives only in the conversation.
+- Parley takes no calendar time.
+- Sound: messenger speech is a procedurally generated buzz. Pitch, speed and rhythm carry the tone, each nation has its own timbre, there is a mute option, and the text of the reply is always shown.
+- Accepted risks of live logic: the on-device model can be inconsistent or easy to talk round, and runs cannot be replayed exactly. Mitigation is in the prompt (a persona that stays in character and does not take claims at face value), not in added rules. If testing shows the enemy is too easy to sweet-talk, the persona prompts are adjusted, and no rule is added.
 
 ## 6. Battle layer
 
@@ -502,7 +497,7 @@ Plan         { formation, wings, reserves, fakeRetreat, objective }
 7. **Spies**: reports contain only true facts; repeated reports with the same spend vary in completeness; a captured spy is announced and can change the enemy plan; intel from last season is gone.
 8. **Training**: levels rise by one per season; 50%, 75% and 90% loss thresholds change levels as specified; unpaid upkeep leaves levels untouched.
 9. **Run end**: each of the three endings produces a history entry and a new leader from the same lineage in a random new city at a later year.
-10. **Parley**: with a fixed seed, the same message to the same enemy gives the same outcome; no more than three rounds are accepted; "join me" and tribute succeed only within set odds and only for personalities that allow them; an ambush starts the ambushed side out of formation with the stated penalties.
+10. **Parley**: no more than three rounds are accepted; every enemy reply maps to one of the basic events; over a batch of scripted messages (insults, bluffs, bribes, offers to join) the enemy replies in character and the outcomes vary sensibly across messages and personas (a scenario check, not exact reproduction); an ambush starts the ambushed side out of formation.
 11. **Performance**: the sim holds the frame-rate targets at the agreed dot counts on the reference device.
 
 ## 14. Risks carried into the plan
@@ -528,8 +523,7 @@ I filled these because the notes did not say. Change any of them and I will upda
 9. Resume a run after closing the app; autosave each season.
 10. Deployment phase before the battle where the player places groups on their edge.
 11. Minimum home garrison size.
-12. Parley odds and costs: how rare is "join me" or a buy-off, and what penalties come with them (low happiness, lost gold, lost march time)?
-13. Whether a broken truce or a killed messenger has lasting effects on other nations later in the same run (nothing carries across runs).
-14. Touch: a two-finger swipe over no group applies to the whole army, and no cue appears before the order takes effect.
-15. Battles take no calendar time (the calendar advances only by seasons on the campaign map).
-16. Names of the groups the player can address (left wing, centre, right wing, cavalry, archers, catapults, reserve) and whether the player can rename or create groups.
+12. Live logic scope: parley is decided by the model with no rule tables. Should the same principle be applied to the rest of the game (see the question in chat)?
+13. Touch: a two-finger swipe over no group applies to the whole army, and no cue appears before the order takes effect.
+14. Battles take no calendar time (the calendar advances only by seasons on the campaign map).
+15. Names of the groups the player can address (left wing, centre, right wing, cavalry, archers, catapults, reserve) and whether the player can rename or create groups.
