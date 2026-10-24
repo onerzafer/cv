@@ -50,6 +50,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Training can be applied per group and per unit.
 - Training changes the shade of the dots, so trained units are visibly distinct.
 - Training level is shown as a shade of the player's nation colour. Unit type is shown by shape (pointy, rectangle horse, cross lines, bigger dot).
+- Training has 10 shade levels.
 - Trained groups are more expensive.
 - Trained groups react more easily to orders, are hard to demoralize and scare, move fast, and have a better chance to kill or hit the target.
 
@@ -59,6 +60,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Victory shows an end screen. History records the feudal leader as the king; after the king's death, for some reason, the kingdom dissolves into new cities and a new game begins (a fresh run).
 - History: the history of this imaginary land is a running log of previous games, shown only as end-screen/home-screen narrative. It carries no gameplay effect.
 - History records both fallen leaders and victors (this replaces the earlier note that failed leaders vanish from history).
+- Leader names are generated (not chosen by the player).
 - Leaders are always the same lineage: each new leader is the son of the previous one ("son of X"), and rises from one of the new cities.
 - AI writes the history narrative (titles and log entries) from what happened in each run (leader, cities, outcome), using Apple's on-device Foundation Model (so it works offline and needs iOS 26+ on an Apple Intelligence device). The narrative is generated at the end of a run.
 - World time always moves forward across runs. The game starts at year 1 (changed from the earlier "around AD 1000"; AD 1000 and AD 1015 in the examples below are just illustrations); if a run lasts 5 game years and the leader falls, the home screen shows AD 1015 (user's example), so the next run starts later in history, with a title such as "After the fall of X, new cities rose and a new leader rose from city X".
@@ -126,4 +128,4 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Do cities conquer or fight each other, or do they only evolve on their own?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
-- Training: how many shade levels? Does training cost money once or also upkeep?
+- Training: does it cost money once or also upkeep? Does it take time (seasons) to train?
