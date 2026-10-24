@@ -47,12 +47,13 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 ### Training
 - Training can be applied per group and per unit.
 - Training changes the colour of the dots, so trained units are visibly distinct.
-- Colour indicates training level only. Nothing else uses colour; unit type is shown by shape (pointy, rectangle horse, cross lines, bigger dot).
+- On the player's own army, colour indicates training level. Unit type is shown by shape (pointy, rectangle horse, cross lines, bigger dot).
 - Trained groups are more expensive.
 - Trained groups react more easily to orders, are hard to demoralize and scare, move fast, and have a better chance to kill or hit the target.
 
 ### Opponent
-- Enemy dots have no training colour: the player cannot see enemy training. Colour is only shown on the player's own army.
+- Enemy armies are coloured per city or nation (faction identity), not by training. The player cannot see enemy training.
+- On the player's own army, colour means training level.
 - The player must infer enemy quality from behaviour: are units well spaced and aligned, small disorders, do they block each other when moving, do they panic or scare easily, etc.
 - Controlled by AI or algorithms.
 - Open field battle only, no castle or fixed target.
@@ -62,7 +63,8 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- How do we tell the player's army (coloured by training) from the enemy's (uncoloured)? Presumably colour vs. neutral, to confirm.
+- Colour palettes: player training colours must not clash with enemy city/nation colours. Is the player's army a fixed colour family?
+- Do city/nation armies differ in composition or style (e.g. cavalry-heavy), not just colour?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
 - Morale: does it also affect death chance?
 - Training: how many levels, and what is the colour scheme? Does training cost money once or also upkeep?
