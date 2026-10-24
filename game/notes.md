@@ -58,7 +58,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - The player picks the target from a map of cities.
 - The map shows a world of small cities. The player starts as one of them (the first city) and conquers the others to build a kingdom.
 - Conquered cities join the player's kingdom, and pay taxes to the player. The city economy (trade, taxes, welfare, happiness) applies to them as part of the kingdom.
-- The player sets the tax rate per city. If a city dislikes it (unhappy population), it can rebel and go independent through an uprising, becoming a separate city again that the player may have to reconquer.
+- The player sets the tax rate and welfare spending per city. If a city dislikes it (unhappy population), it can rebel and go independent through an uprising, becoming a separate city again that the player may have to reconquer.
 - A rebelling city gets its own army, built from its own economy.
 - Rebellion is gradual (unrest builds up over turns) and can be prevented by garrisoning troops in the city and by welfare spending.
 - Garrison troops are split off from the player's battle army, so every garrison weakens the army available for the next fight.
@@ -95,7 +95,6 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 ## Open questions
 - Map: what does it show about each city (size, wealth, nation colour, distance)? Does the player see accurate or only rumoured info about enemy strength?
 - Uprising: what is the visible warning of rising unrest?
-- Does the player also set welfare/service spending per city, or only the tax rate?
 - Is there a win condition? Other ways to lose besides losing the army (e.g. losing the original city)?
 - Do cities conquer or fight each other, or do they only evolve on their own?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
