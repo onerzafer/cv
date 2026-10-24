@@ -6,7 +6,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ### Concept
 - Mobile game, battle strategy, top-down view.
-- Random battlefield each battle (generated).
+- Random battlefield each battle (generated). The terrain comes from the target city's surroundings.
 - Medieval setting (Middle Ages).
 - Player is the invader.
 
@@ -106,7 +106,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Marching: can the player cancel or redirect a march? Does the battlefield terrain come from the route or the target city?
+- Marching: can the player cancel or redirect a march?
 - Map: what is visible about each city without spies (size, nation colour, distance)?
 - Is there a win condition? Other ways to lose besides losing the army (e.g. losing the original city)?
 - Do cities conquer or fight each other, or do they only evolve on their own?
