@@ -18,7 +18,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 ### Units / visuals
 - Soldiers are tiny dots; no detail on soldiers.
 - Movement is particle-based fluid dynamics: units flow around field obstacles (hills etc.).
-- Bigger dots can throw projectiles.
+- Bigger dots are catapults that throw rocks.
 - Pointy dots are spearmen. Strong against cavalry.
 - Cavalry: dots with rectangle horses (rectangle shape attached to the dot). Charge fast and break through lines.
 - Archers: specially coloured dots that shoot arrows (small projectiles) from range.
@@ -31,7 +31,6 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Which dot type/colour is which unit (infantry, cavalry, archers, catapults)?
 - Is the opponent defending a fixed target (castle/town) or a field battle?
 - Fluid dynamics: does it also drive combat (pressure, crowding), or only movement?
 - Voice/text: free-form natural language, or a fixed command vocabulary?
