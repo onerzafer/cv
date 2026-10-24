@@ -52,6 +52,8 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Trained groups react more easily to orders, are hard to demoralize and scare, move fast, and have a better chance to kill or hit the target.
 
 ### Opponent
+- Enemy dots have no training colour: the player cannot see enemy training. Colour is only shown on the player's own army.
+- The player must infer enemy quality from behaviour: are units well spaced and aligned, small disorders, do they block each other when moving, do they panic or scare easily, etc.
 - Controlled by AI or algorithms.
 - Open field battle only, no castle or fixed target.
 
@@ -60,7 +62,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- If colour means training only, how do we tell the player's army from the enemy's (shape outline, side of the field, brightness, a ring)?
+- How do we tell the player's army (coloured by training) from the enemy's (uncoloured)? Presumably colour vs. neutral, to confirm.
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
 - Morale: does it also affect death chance?
 - Training: how many levels, and what is the colour scheme? Does training cost money once or also upkeep?
