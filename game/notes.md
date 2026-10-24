@@ -56,6 +56,9 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 ### Campaign / world
 - Win condition: conquer all the cities on the map.
 - Victory shows an end screen. History records the feudal leader as the king; after the king's death, for some reason, the kingdom dissolves into new cities and a new game begins (a fresh run).
+- History: the history of this imaginary land is a running log of previous games, shown only as end-screen/home-screen narrative. It carries no gameplay effect.
+- World time always moves forward across runs. The game starts around AD 1000; if a run lasts 5 game years and the leader falls, the home screen shows AD 1015 (example: 15 years in, i.e. later runs start later) with a title such as "After the fall of X, new cities rose and a new leader rose from city X".
+- The home screen shows the current year and this narrative title.
 - Losing the original city does not end the run; the run only ends when the army is lost completely.
 - Persistent world of cities/nations. The player chooses whether to go to war with a city; skipping a war is a valid choice.
 - The player picks the target from a map of cities.
@@ -81,7 +84,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Garrison troops are split off from the player's battle army, so every garrison weakens the army available for the next fight.
 - Garrisons and the field army both cost upkeep every turn.
 - Unpaid upkeep (or unfed troops) causes desertion and lower morale. If it continues the player can lose the army completely.
-- Losing the army ends the run: the player vanishes from history as a failed feudal leader. If the player chooses to play again, a new leader appears somewhere else in the world (a new start, not a continuation). The new leader starts from a random location and the map is regenerated each run with new cities. Each run is fully fresh: nothing carries over.
+- Losing the army ends the run: the player vanishes from history as a failed feudal leader. If the player chooses to play again, a new leader appears somewhere else in the world (a new start, not a continuation). The new leader starts from a random location and the world map (land, terrain) is always the same, and only the cities are placed at new random locations each run. No gameplay progress carries over between runs (no unlocks, army or money), but the world's calendar and history do (see History).
 - Rebel cities get back their original colour.
 - A rebel army starts weak and hardens each turn (more training and strength), so reconquering sooner is easier. This pushes the player to act quickly against uprisings.
 - A city's army depends on its richness and on time. If we leave a city alone, it may spend money, grow and train its army, so it is stronger when we return.
@@ -110,7 +113,9 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- History: failed leaders vanish from history, while a victorious leader is recorded as king. Is that history shown only in the end screen narrative (nothing carried into the next run)?
+- Calendar: how much time passes between a run ending and the next one starting (the example jumps from year 5 of the run to AD 1015)? Is the AD 1000 start fixed?
+- Failed leaders: earlier note says they vanish from history, but the home screen narrative names the fallen leader and city. Do failed leaders appear in the log or not?
+- Which city does the new leader rise from, one of the new random cities?
 - Can a player be left with no cities but still an army, and keep playing?
 - Do cities conquer or fight each other, or do they only evolve on their own?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
