@@ -21,6 +21,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
   - Insulting or disrespectful orders (e.g. "useless sh*ts, attack") can have an adverse effect on morale.
   - Heroic or inspiring speech (e.g. "we came here to liberate these barbarians, save the slaves and protect the lands we have") raises morale and boosts certain dynamics.
 - Morale affects movement speed, cohesion (how tightly dots stay together), and fleeing.
+- Morale has no direct death-chance rule. It affects survival only indirectly, through cohesion, fleeing and support (as in real armies, where most deaths happen when a broken side flees and is cut down, and where tight formations protect each soldier).
 - Morale is dynamic: it can decay, change, or recover over time (e.g. through events in the battle, not only speech).
 - Morale is local, not army-wide: a group that gets cornered can become fearful and disoriented while the rest of the army stays fine.
 - Fear spreads to nearby groups (contagion), so a local rout can cascade if neighbours are not well trained.
@@ -66,5 +67,4 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Colour palettes: player training colours must not clash with enemy city/nation colours. Is the player's army a fixed colour family?
 - Do city/nation armies differ in composition or style (e.g. cavalry-heavy), not just colour?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
-- Morale: does it also affect death chance?
 - Training: how many levels, and what is the colour scheme? Does training cost money once or also upkeep?
