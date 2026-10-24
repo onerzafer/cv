@@ -65,6 +65,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Spies can reveal army size and composition, and also enemy tactics: fake retreats, forces hidden behind hills or under trees, a weak wing (e.g. right wing weakest against cavalry), etc.
 - The level of detail depends on how much money is spent.
 - Intelligence is probabilistic: spies can fail, die or be captured, and information can be wrong or leaked. This is hidden from the player and is only a randomization formula, with no visible spy missions, deaths or captures.
+- The player sees only the intel result, never a confidence hint or reliability indicator.
 - Intel goes stale after one turn (one season), so it has to be bought again to stay current.
 - Rising unrest is shown on the city itself on the map.
 - Garrison troops are split off from the player's battle army, so every garrison weakens the army available for the next fight.
@@ -99,7 +100,6 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Spies: does the player see how reliable the intel is (e.g. a confidence hint) or just the result?
 - Tactics intel: how is it delivered to the player (text report, map markers) and how does it feed the enemy AI's actual behaviour in the battle?
 - Map: what is visible about each city without spies (size, nation colour, distance)?
 - Is there a win condition? Other ways to lose besides losing the army (e.g. losing the original city)?
