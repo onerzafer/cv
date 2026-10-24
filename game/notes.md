@@ -14,6 +14,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Only controls: a text box, finger gestures, or voice.
 - Voice: use on-device iOS models to capture voice and convert to text.
 - Example commands: "middle hold", "right wing advance". Soldiers do as said.
+- Voice and text input are free-form natural language, not a fixed command vocabulary.
 
 ### Units / visuals
 - Soldiers are tiny dots; no detail on soldiers.
@@ -34,4 +35,3 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Voice/text: free-form natural language, or a fixed command vocabulary?
