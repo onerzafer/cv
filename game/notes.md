@@ -66,6 +66,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - The level of detail depends on how much money is spent.
 - Intelligence is probabilistic: spies can fail, die or be captured, and information can be wrong or leaked. This is hidden from the player and is only a randomization formula, with no visible spy missions, deaths or captures.
 - Tactics intel is delivered as a text report.
+- The enemy AI follows what the spies report: the reported tactics (fake retreat, hidden force, weak wing) are what the AI actually does in the battle.
 - The player sees only the intel result, never a confidence hint or reliability indicator.
 - Intel goes stale after one turn (one season), so it has to be bought again to stay current.
 - Rising unrest is shown on the city itself on the map.
@@ -101,7 +102,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Tactics intel: how does it connect to the enemy AI's actual behaviour in the battle, so a report about a hidden force or a weak wing is true (or deliberately wrong when intel fails)?
+- When intel fails or leaks, does the report simply contain wrong details (so the AI does something different), or does the AI plan change?
 - Map: what is visible about each city without spies (size, nation colour, distance)?
 - Is there a win condition? Other ways to lose besides losing the army (e.g. losing the original city)?
 - Do cities conquer or fight each other, or do they only evolve on their own?
