@@ -37,13 +37,18 @@ Each milestone lists its goal, the spec parts it covers, the section 13 tests it
 - **Status:** the docs, `CLAUDE.md` and prototype are ready in `game/` of the current repository. Creating the repository failed with a 403 (the connected GitHub integration cannot create repositories). To finish: create an empty private repository on your GitHub account, then I attach it and push.
 - **Gate:** you approve the repository name and layout.
 
-### M1. Battle sandbox (browser prototype) — built in this session
+### M1. Battle sandbox (browser prototype): built, results below
 - **Goal:** see the core idea working and get a first feasibility signal for the particle simulation.
-- **Covers:** spec 6.2 to 6.6, 6.9, 7.2 (touch), 6.6 (hidden order delay), with a stand-in text parser.
-- **Tests:** an informal version of tests 3 and 4 (unit behaviours, rout). Desktop-JS step times, not phone numbers.
-- **Risk retired:** partly, the simulation design is workable; **not** the phone performance risk.
-- **Runs:** here (Playwright). The prototype is also published as an Artifact to try on your phone.
-- **Gate:** you try it and tell me what to change.
+- **Covers:** spec 6.2 to 6.6, 6.9, 7.2 (touch), 6.6 (hidden order delay), with a keyword parser standing in for the on-device model. Voice is not in the sandbox.
+- **Results (desktop JavaScript, headless Chromium; not iPhone numbers).** Details and constants are in `prototype/README.md`.
+  - Order delay: a group does not move before the delay and moves after it. Passes.
+  - Spearmen against a cavalry charge (5 seeds): spearmen lose 11 to 22 of 200, cavalry loses 34 to 48. Passes.
+  - Cavalry against a thin untrained line (5 seeds): the line loses 46 to 78, the cavalry loses 36 to 49. The charge bonus does fire, but cavalry does not clearly break the line. **Open gap**, not tuned.
+  - Fear spreading (3 seeds): the attacked untrained group flees at about 28 to 30 s, an untrained neighbour that was never attacked flees later (about 39 to 55 s), and a trained neighbour never flees. Passes.
+  - Hidden group: all 72 dots of the forest reserve are hidden from the player. Passes.
+  - Speed: about 0.6 ms per step for 2,000 dots, 3.2 ms for 10,000 and 7.2 ms for 20,000 (a step is 1/30 s of battle time). This is a desktop signal only.
+- **Risk retired:** partly. The simulation design works; phone performance is still unknown (M3).
+- **Gate:** you try the published sandbox and tell me what to change.
 
 ### M2. Simulation core in Swift (CPU reference) **[needs Mac/iPhone to run on device; logic tests run on any Swift machine]**
 - **Goal:** the deterministic `Sim` package, ported from the prototype's design, with seeded tests and a replayable log.

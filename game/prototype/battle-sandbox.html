@@ -79,7 +79,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px s
 #cmd { display: flex; gap: 8px; }
 #cmd input { flex: 1 1 0; min-width: 0; padding: 9px 10px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--panel-ink); }
 #cmd button.go { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-#quick { display: flex; flex-wrap: wrap; gap: 6px; }
+#quick { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding-bottom: 6px; }
 #quick .grp { display: flex; flex-wrap: wrap; gap: 6px; }
 #more summary { font: 500 12px var(--font-mono); color: var(--muted); cursor: pointer; padding: 2px 0; }
 #opts { padding-top: 6px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
@@ -117,11 +117,12 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px s
       <input id="cmdIn" type="text" placeholder='Try "left wing advance, hold the centre" or "hide the cavalry in the trees"' aria-label="Command">
       <button class="go" type="submit">Send</button>
     </form>
+    <details id="more"><summary>Options</summary>
     <div id="quick">
+      <span class="stat">Desktop test aid (not part of the design):</span>
       <span class="grp" id="grpBtns"></span>
       <span class="grp" id="actBtns"></span>
     </div>
-    <details id="more"><summary>Options</summary>
     <div id="opts">
       <label>Dots per side
         <select id="optN"><option>600</option><option selected>1200</option><option>2500</option><option>5000</option></select>
@@ -191,7 +192,7 @@ function defaultGroups(perSide) {
 class Sim {
   constructor(o = {}) {
     this.rng = mulberry32((o.seed | 0) || 1);
-    this.t = 0; this.pass = 0; this.stepN = 0; this.over = null; this.aiLog = [];
+    this.t = 0; this.pass = 0; this.stepN = 0; this.over = null; this.aiLog = []; this.firstDeath = null; this.chargeHit = 0; this.cavContact = 0;
     this.delay = o.delay == null ? ORDER_DELAY : o.delay;
     this.hideEnemy = o.hideEnemy !== false;
     this.obst = o.obstacles || defaultObstacles();
@@ -437,7 +438,7 @@ class Sim {
                 let p = 0;
                 if (tj === SOL) p = 1;
                 else if (tj === SPEAR) p = type[i] === CAV ? 2.5 : 1;
-                else if (tj === CAV) p = (vx[j] * vx[j] + vy[j] * vy[j]) > (0.6 * SPEED[CAV]) ** 2 ? 2.2 : 0.8;
+                else if (tj === CAV) { const ch = (vx[j] * vx[j] + vy[j] * vy[j]) > (0.6 * SPEED[CAV]) ** 2; p = ch ? 2.2 : 0.8; this.cavContact++; if (ch) this.chargeHit++; }
                 else if (tj === ARCH) p = 0.3;
                 if (p > 0) {
                   const e = Math.sqrt(e2) || 1; contact++; power += p; vxs += ex / e; vys += ey / e; atk += dtr[j] - 1;
@@ -519,7 +520,7 @@ class Sim {
     // apply deaths
     for (const i of dead) {
       if (!alive[i]) continue;
-      alive[i] = 0; const g = groups[grp[i]]; g.alive--; g.lossPass++; this.count[team[i]]--;
+      if (this.firstDeath == null) this.firstDeath = this.t; alive[i] = 0; const g = groups[grp[i]]; g.alive--; g.lossPass++; this.count[team[i]]--;
     }
     // morale
     const dtm = dtc;
@@ -588,44 +589,46 @@ const Proto = {
     const s = new Sim({
       seed, delay: 0, groups: [
         { team: 0, key: 'P', name: 'P', train: 1, count: 200, cx: 1200, cy: 800, w: 60, h: 60, type: SPEAR },
-        block(1, 'V', CAV, 200, 1700, 800, 60, 60, 1),
+        block(1, 'V', CAV, 200, 1300, 800, 60, 60, 1),
       ], obstacles: []
     });
     s.issue(1, ['V'], 'advance'); s.issue(0, ['P'], 'hold'); s.run(60);
-    return { spearLost: 200 - s.count[0], cavLost: 200 - s.count[1] };
+    return { spearLost: 200 - s.count[0], cavLost: 200 - s.count[1], firstDeath: s.firstDeath, chargeHit: s.chargeHit, cavContact: s.cavContact };
   },
   // Cavalry against an untrained thin infantry line (soldiers only).
   cavVsLine(seed) {
     const s = new Sim({
       seed, delay: 0, groups: [
         { team: 0, key: 'S', name: 'S', train: 1, count: 200, cx: 1200, cy: 800, w: 20, h: 300, type: SOL },
-        block(1, 'V', CAV, 200, 1700, 800, 60, 60, 1),
+        block(1, 'V', CAV, 200, 1300, 800, 60, 60, 1),
       ], obstacles: []
     });
     s.issue(1, ['V'], 'advance'); s.issue(0, ['S'], 'hold'); s.run(60);
-    return { lineLost: 200 - s.count[0], cavLost: 200 - s.count[1] };
+    return { lineLost: 200 - s.count[0], cavLost: 200 - s.count[1], firstDeath: s.firstDeath, chargeHit: s.chargeHit, cavContact: s.cavContact };
   },
-  // Rout: an untrained group gets hit while a trained neighbour stands beside it.
+  // Rout and fear spreading: U (untrained) is attacked. N (untrained) and T (trained) stand beside it but are not attacked.
   rout(seed) {
     const s = new Sim({
       seed, delay: 0, groups: [
         { team: 0, key: 'U', name: 'U', train: 1, count: 160, cx: 1000, cy: 700, w: 60, h: 100, type: SOL },
-        { team: 0, key: 'T', name: 'T', train: 9, count: 160, cx: 1000, cy: 880, w: 60, h: 100, type: SOL },
-        { team: 1, key: 'E', name: 'E', train: 5, count: 520, cx: 1300, cy: 780, w: 90, h: 230, type: SOL },
+        { team: 0, key: 'T', name: 'T', train: 9, count: 160, cx: 1000, cy: 840, w: 60, h: 100, type: SOL },
+        { team: 0, key: 'N', name: 'N', train: 1, count: 160, cx: 1000, cy: 560, w: 60, h: 100, type: SOL },
+        { team: 1, key: 'E', name: 'E', train: 5, count: 520, cx: 1140, cy: 700, w: 90, h: 140, type: SOL },
       ], obstacles: []
     });
-    s.issue(1, ['E'], 'advance'); s.issue(0, ['U', 'T'], 'hold');
-    const out = { uFleeAt: null, tFleeAt: null, uMin: 1, tMin: 1 };
+    s.issue(1, ['E'], 'advance'); s.issue(0, ['U', 'T', 'N'], 'hold');
+    const out = { uFleeAt: null, nFleeAt: null, tFleeAt: null, uMin: 1, nMin: 1, tMin: 1, nLost: 0, tLost: 0 };
     for (let k = 0; k < 30 * 90 && !s.over; k++) {
       s.step();
       if (k % 3 === 0) {
-        const u = s.groups[0], t = s.groups[1];
-        out.uMin = Math.min(out.uMin, u.morale); out.tMin = Math.min(out.tMin, t.morale);
+        const [u, t, n] = [s.groups[0], s.groups[1], s.groups[2]];
+        out.uMin = Math.min(out.uMin, u.morale); out.tMin = Math.min(out.tMin, t.morale); out.nMin = Math.min(out.nMin, n.morale);
         if (u.fleeing && out.uFleeAt == null) out.uFleeAt = s.t;
+        if (n.fleeing && out.nFleeAt == null) out.nFleeAt = s.t;
         if (t.fleeing && out.tFleeAt == null) out.tFleeAt = s.t;
       }
     }
-    out.uLost = 160 - s.groups[0].alive; out.tLost = 160 - s.groups[1].alive;
+    out.uLost = 160 - s.groups[0].alive; out.tLost = 160 - s.groups[1].alive; out.nLost = 160 - s.groups[2].alive; out.firstDeath = s.firstDeath;
     return out;
   },
   // Hidden group: enemy reserve in the forest is not visible to the player until someone comes close.
@@ -780,7 +783,7 @@ function renderGroupBtns() {
   const act = $('actBtns'); act.textContent = '';
   for (const [a, label] of [['advance', 'Advance'], ['hold', 'Hold'], ['retreat', 'Retreat'], ['flank', 'Flank'], ['conceal', 'Hide in trees']]) {
     const b = document.createElement('button'); b.textContent = label;
-    b.onclick = () => { if (!sim || sim.over) return; const keys = selected.size ? [...selected] : 'all'; sim.issue(0, keys, a); log('Ordered: ' + a + ' ' + (keys === 'all' ? 'whole army' : keys.join('+'))); };
+    b.onclick = () => { if (!sim || sim.over) return; const keys = selected.size ? [...selected] : 'all'; sim.issue(0, keys, a); };
     act.appendChild(b);
   }
 }
@@ -835,9 +838,9 @@ function swipeOrder(ux, uy) {
   const target = keys.length ? keys : 'all';
   if (Math.abs(ux) > Math.abs(uy) * 1.4) {
     const act = ux > 0 ? 'advance' : 'retreat';
-    sim.issue(0, target, act); log(`Swipe: ${act} ${target === 'all' ? 'whole army' : target.join('+')}`);
+    sim.issue(0, target, act);
   } else {
-    sim.issue(0, target, 'move', { dx: ux, dy: uy }); log(`Swipe: move ${target === 'all' ? 'whole army' : target.join('+')}`);
+    sim.issue(0, target, 'move', { dx: ux, dy: uy });
   }
 }
 
