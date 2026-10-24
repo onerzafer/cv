@@ -62,6 +62,9 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - A rebelling city gets its own army, built from its own economy.
 - Rebellion is gradual (unrest builds up over turns) and can be prevented by garrisoning troops in the city and by welfare spending.
 - Enemy cities are not fully known on the map. The player can spend money on spies to learn more about a city's wealth, army and strength; without spies the information is partial.
+- Spies can reveal army size and composition, and also enemy tactics: fake retreats, forces hidden behind hills or under trees, a weak wing (e.g. right wing weakest against cavalry), etc.
+- The level of detail depends on how much money is spent.
+- Intelligence is probabilistic: spies can fail, die or be captured, and information can be wrong or leaked. This is hidden from the player and is only a randomization formula, with no visible spy missions, deaths or captures.
 - Rising unrest is shown on the city itself on the map.
 - Garrison troops are split off from the player's battle army, so every garrison weakens the army available for the next fight.
 - Garrisons and the field army both cost upkeep every turn.
@@ -95,7 +98,8 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Spies: how much does a spy cost, what exactly do they reveal (army size, composition, training), is the information exact or an estimate, and does it go stale after a turn?
+- Spies: does intel go stale after a turn? Does the player see how reliable the intel is (e.g. a confidence hint) or just the result?
+- Tactics intel: how is it delivered to the player (text report, map markers) and how does it feed the enemy AI's actual behaviour in the battle?
 - Map: what is visible about each city without spies (size, nation colour, distance)?
 - Is there a win condition? Other ways to lose besides losing the army (e.g. losing the original city)?
 - Do cities conquer or fight each other, or do they only evolve on their own?
