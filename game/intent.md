@@ -61,5 +61,3 @@ The player fantasy: being a commander who sees the field from above, gives order
 ## Open items (carried from the notes)
 
 1. Gesture details: a swipe over an area advances or retreats the units there, but how is advance told apart from retreat, and how does the player pan and zoom the field?
-2. Run gap: read as the gap between runs (not between turns), to confirm.
-3. Does "trained groups are more expensive" include higher upkeep or only the one-time training cost?

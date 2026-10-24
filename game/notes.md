@@ -50,9 +50,9 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Training can be applied per group and per unit.
 - Training changes the shade of the dots, so trained units are visibly distinct.
 - Training level is shown as a shade of the player's nation colour. Unit type is shown by shape (pointy, rectangle horse, cross lines, bigger dot).
-- Training has 10 shade levels. Training costs money once (no ongoing training cost, though the army still pays normal upkeep) and takes one season. A group trains one level per season. Many groups and units can train in parallel; money is the only limit. Trained units lose their training only after heavy losses, defined as more than half of the unit being gone (unpaid upkeep does not remove training). The cost of training rises with each level.
+- Training has 10 shade levels. Training costs money once (a one-time cost; trained groups then also pay higher upkeep every turn, rising with level) and takes one season. A group trains one level per season. Many groups and units can train in parallel; money is the only limit. Trained units lose their training only after heavy losses, defined as more than half of the unit being gone (unpaid upkeep does not remove training). The cost of training rises with each level.
 - Training loss scales with casualties: about 50% lost drops one level, 75% lost halves the levels, and 90% lost resets the unit to level one.
-- Trained groups are more expensive.
+- Trained groups are more expensive: a one-time training cost plus higher upkeep every turn.
 - Trained groups react more easily to orders, are hard to demoralize and scare, move fast, and have a better chance to kill or hit the target.
 
 ### Campaign / world
@@ -69,7 +69,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - There is no end year; the calendar runs forever. The gap length is random with no fixed range.
 - The player always has at least one city. The last city is not immune: it can rebel based on taxes, but it is the home city of the king, so its population rebels less than the other cities.
 - If the home city rebels, the player gets one last chance to recapture it, using the small garrison army that is always kept in the home city, in a normal real-time battle (garrison versus the rebel army) (the main army is split when raiding other cities, so some units always stay behind). If the player loses that last battle, the city is lost; if it was the last city, the run ends: history records the fallen feudal leader, time passes, and a new leader rises again in a random city.
-- The time gap between one run ending and the next starting is random, but long enough to be realistic for old cities to dissolve and new ones to be built (read as the gap between runs; "between turns" in the original note, to confirm).
+- The time gap between one run ending and the next starting is random, but long enough to be realistic for old cities to dissolve and new ones to be built (confirmed: it is the gap between runs, not between turns).
 - The home screen shows the current year and this narrative title.
 - A run ends in exactly three ways: the player conquers every city (victory), the army is lost completely, or the last city is lost. Losing the original city alone does not end the run.
 - Persistent world of cities/nations. The player chooses whether to go to war with a city; skipping a war is a valid choice.
@@ -128,6 +128,4 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ## Open questions
 - Gesture details: how is advance told apart from retreat (swipe direction toward or away from the enemy)? How does the player pan and zoom the field?
-- Run gap: read as the gap between runs ("between turns" in the original note), to confirm.
-- "Trained groups are more expensive": only the one-time training cost, or higher upkeep too?
 
