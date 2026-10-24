@@ -111,6 +111,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - The enemy AI answers in its own way: it may accept (for example join the player), kill the messenger, send a message back, or offer gold in return for the player leaving. The enemy can try the same things toward the player.
 - Messages can provoke the opponent, who may become aggressive and make mistakes.
 - Ambush and dirty work are allowed for both sides, for fun.
+- Principle: no mechanics for this, only basic things (units, win and loss) and live logic: trust, personality and bargaining are decided live by the AI, not by rule tables.
 - The AI drives these decisions (the enemy's replies and choices). Messenger speech is heard as bee-like buzzing ("bzz biz biz biiizzz") with the words as text. Messengers are not shown on screen.
 
 ### City economy (simulated balance)
