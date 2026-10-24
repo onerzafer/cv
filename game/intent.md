@@ -10,7 +10,7 @@ The player fantasy: being a commander who sees the field from above, gives order
 
 ## Pillars
 
-1. **Speech is command.** Free-form voice or text, with no command list. A language model turns the words into orders and also reads their tone: an insult hurts morale, a heroic speech lifts it. Orders reach the army after a fixed, hidden delay, as if carried by horn, flag or rider.
+1. **Speech is command.** Free-form voice or text, with no command list. Apple's on-device model turns the words into orders and also reads their tone: an insult hurts morale, a heroic speech lifts it. Orders reach the army after a fixed, hidden delay, as if carried by horn, flag or rider.
 2. **Combat emerges from the simulation.** Dots move as a particle fluid around terrain. Who dies depends on being surrounded and supported. Morale is local and spreads like fear, and training decides who holds. No scripted duels.
 3. **The economy balances itself.** Cities earn from trade and taxes and spend on armies and welfare. Heavy taxes and a big army breed unrest, and unrest breeds rebellion. The player sets tax and welfare per city.
 4. **Uncertainty everywhere.** Enemy training, plans and tactics are hidden and can only be inferred from behaviour or bought with spies. Spy reports are true but incomplete, and go stale after one season.
@@ -41,8 +41,7 @@ The player fantasy: being a commander who sees the field from above, gives order
 ## Hard constraints
 
 - iOS only, on Apple Intelligence devices, with iOS 26 or later.
-- Voice capture and the fallback language model run on-device. Network is acceptable during play, but the game must work offline.
-- Order parsing and mood reading use Jev (TypeSafe AI) as the primary path, with Apple's on-device Foundation Model as the fallback. History narrative uses the on-device model and is generated at the end of a run.
+- Voice capture, order parsing, mood reading and the history narrative all run on-device with Apple's Foundation Model. The game works fully offline. The narrative is generated at the end of a run.
 
 ## Success criteria
 
@@ -55,7 +54,6 @@ The player fantasy: being a commander who sees the field from above, gives order
 ## Risks
 
 - **Simulation cost.** Thousands of fluid-like particles with local combat on a phone is a feasibility risk. Needs an early prototype before the spec locks unit counts.
-- **Jev availability.** Jev is early access, and one listing showed it as "Coming Soon". It should be treated as an optional enhancement. The on-device model must be able to do the whole job alone.
 - **On-device model limits.** Apple's model has a small context window and limited reasoning, so order parsing needs tight, structured prompts.
 - **Free-form speech ambiguity.** "Right wing" and "middle hold" must map to real groups reliably, including when the player is vague.
 - **Hidden-mechanics balance.** With delay, intel quality and enemy adaptation all hidden, tuning will need telemetry or playtest data.
