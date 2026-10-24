@@ -19,7 +19,8 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Soldiers are tiny dots; no detail on soldiers.
 - Movement is particle-based fluid dynamics: units flow around field obstacles (hills etc.).
 - Bigger dots can throw projectiles.
-- Pointy dots are spearmen (original note: "might gold position"; likely means they hold position, to confirm).
+- Pointy dots are spearmen. Strong against cavalry.
+- Cavalry: dots with rectangle horses (rectangle shape attached to the dot).
 - Specially coloured dots can throw arrows (small projectiles).
 
 ### Opponent
@@ -30,7 +31,6 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Spearmen: what do they do specially (hold position, anti-cavalry)? Original note said "might gold position".
 - Which dot type/colour is which unit (infantry, cavalry, archers, catapults)?
 - Is the opponent defending a fixed target (castle/town) or a field battle?
 - Fluid dynamics: does it also drive combat (pressure, crowding), or only movement?
