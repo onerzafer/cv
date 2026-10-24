@@ -73,6 +73,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Travel time on the map depends on distance and terrain. The player's army travels too, and a march can take multiple seasons, and the army costs upkeep while marching. The player can redirect a march in progress.
 - The player sees only the intel result, never a confidence hint or reliability indicator.
 - Intel goes stale after one turn (one season), so it has to be bought again to stay current.
+- Without spies the map shows only city size and nation colour. Unrest is shown on the player's own cities.
 - Rising unrest is shown on the city itself on the map.
 - Garrison troops are split off from the player's battle army, so every garrison weakens the army available for the next fight.
 - Garrisons and the field army both cost upkeep every turn.
@@ -106,7 +107,6 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Map: what is visible about each city without spies (size, nation colour, distance)?
 - Is there a win condition? Other ways to lose besides losing the army (e.g. losing the original city)?
 - Do cities conquer or fight each other, or do they only evolve on their own?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
