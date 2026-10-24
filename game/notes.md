@@ -25,12 +25,12 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ### Opponent
 - Controlled by AI or algorithms.
+- Open field battle only, no castle or fixed target.
 
 ### Economy / progression
 - As invaders, we earn money by winning battles.
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Is the opponent defending a fixed target (castle/town) or a field battle?
 - Fluid dynamics: does it also drive combat (pressure, crowding), or only movement?
 - Voice/text: free-form natural language, or a fixed command vocabulary?
