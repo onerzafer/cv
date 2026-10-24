@@ -57,7 +57,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Win condition: conquer all the cities on the map.
 - Victory shows an end screen. History records the feudal leader as the king; after the king's death, for some reason, the kingdom dissolves into new cities and a new game begins (a fresh run).
 - History: the history of this imaginary land is a running log of previous games, shown only as end-screen/home-screen narrative. It carries no gameplay effect.
-- AI writes the history narrative (titles and log entries) from what happened in each run (leader, cities, outcome).
+- AI writes the history narrative (titles and log entries) from what happened in each run (leader, cities, outcome), using Apple's on-device Foundation Model (so it works offline and needs iOS 26+ on an Apple Intelligence device).
 - World time always moves forward across runs. The game starts around AD 1000; if a run lasts 5 game years and the leader falls, the home screen shows AD 1015 (user's example), so the next run starts later in history, with a title such as "After the fall of X, new cities rose and a new leader rose from city X".
 - The home screen shows the current year and this narrative title.
 - Losing the original city does not end the run; the run only ends when the army is lost completely.
@@ -117,7 +117,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Calendar: how much time passes between a run ending and the next one starting (the example jumps from year 5 of the run to AD 1015)? Is the AD 1000 start fixed?
 - Failed leaders: earlier note says they vanish from history, but the home screen narrative names the fallen leader and city. Do failed leaders appear in the log or not?
 - Which city does the new leader rise from, one of the new random cities?
-- History narrative: which model writes it (Jev returns structured decisions rather than prose, so likely a different language model)? Is it generated live or at run end, and does it need the network or have an offline fallback?
+- History narrative: generated at run end or live? Devices without Apple Intelligence: pre-written text, or no narrative?
 - Can a player be left with no cities but still an army, and keep playing?
 - Do cities conquer or fight each other, or do they only evolve on their own?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
