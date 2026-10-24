@@ -52,6 +52,11 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Trained groups are more expensive.
 - Trained groups react more easily to orders, are hard to demoralize and scare, move fast, and have a better chance to kill or hit the target.
 
+### Campaign / world
+- Persistent world of cities/nations. The player chooses whether to go to war with a city; skipping a war is a valid choice.
+- A city's army depends on its richness and on time. If we leave a city alone, it may spend money, grow and train its army, so it is stronger when we return.
+- Time passes between battles and cities evolve, so timing of when to attack matters.
+
 ### Opponent
 - Enemy armies are coloured per city or nation (faction identity), not by training. The player cannot see enemy training.
 - The player's army is also one of the nation colours. Training level is shown by the shade of that colour (not a different hue).
@@ -66,6 +71,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Is composition fixed per nation, or does it vary by battle or difficulty?
+- Campaign: how is time measured (turns, real time)? How do cities earn and spend money (growth rules)? How does the player pick a target (map of cities)?
+- Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
 - Training: how many shade levels? Does training cost money once or also upkeep?
