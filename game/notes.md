@@ -70,6 +70,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - The enemy's plan, tactics and city state are generated whether or not spies exist, and the enemy AI drives the battle from that information. Spies do not change anything; they only reveal part of it (AI plans, city state, tactics such as fake retreats, hidden forces, weak wings).
 - The enemy AI's adaptation is simulated with realistic conditions and limits: it needs money and time. For example, if it decides to train its army to cover a weakness and the player attacks right away, the training may not be finished and the weakness is still there.
 - Within one season the enemy can train, recruit and move forces, but not all at once. The economy is the boundary (money is shared between options), and distances can be hard to traverse, limiting how fast forces can move.
+- Travel time on the map depends on distance and terrain.
 - The player sees only the intel result, never a confidence hint or reliability indicator.
 - Intel goes stale after one turn (one season), so it has to be bought again to stay current.
 - Rising unrest is shown on the city itself on the map.
@@ -105,7 +106,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Map distance: how is travel time modelled (distance per season, terrain, roads)? Does it also limit the player's own army movement?
+- Does travel time apply to the player's own army too (moving from city to target takes seasons)? Does the battlefield terrain come from the route or the target city?
 - Map: what is visible about each city without spies (size, nation colour, distance)?
 - Is there a win condition? Other ways to lose besides losing the army (e.g. losing the original city)?
 - Do cities conquer or fight each other, or do they only evolve on their own?
