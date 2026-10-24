@@ -59,6 +59,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - The map shows a world of small cities. The player starts as one of them (the first city) and conquers the others to build a kingdom.
 - Conquered cities join the player's kingdom, and pay taxes to the player. The city economy (trade, taxes, welfare, happiness) applies to them as part of the kingdom.
 - The player sets the tax rate per city. If a city dislikes it (unhappy population), it can rebel and go independent through an uprising, becoming a separate city again that the player may have to reconquer.
+- A rebelling city gets its own army, built from its own economy.
 - A city's army depends on its richness and on time. If we leave a city alone, it may spend money, grow and train its army, so it is stronger when we return.
 - Campaign time is turn-based (battles are real time; the campaign advances in turns). One turn is one season.
 - Time passes between battles and cities evolve, so timing of when to attack matters.
@@ -86,7 +87,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ## Open questions
 - Map: what does it show about each city (size, wealth, nation colour, distance)? Does the player see accurate or only rumoured info about enemy strength?
-- Uprising: does a rebelling city get its own army (using the city economy)? Can the player prevent it (garrison, welfare spending)? Is it gradual or sudden?
+- Uprising: what colour/identity does a rebel city take? Can the player prevent it (garrison, welfare spending)? Is it gradual or sudden?
 - Does the player also set welfare/service spending per city, or only the tax rate?
 - Is there a win condition? Can the player lose the game (e.g. losing the original city)?
 - Do cities conquer or fight each other, or do they only evolve on their own?
