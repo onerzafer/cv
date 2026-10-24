@@ -57,7 +57,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Persistent world of cities/nations. The player chooses whether to go to war with a city; skipping a war is a valid choice.
 - The player picks the target from a map of cities.
 - The map shows a world of small cities. The player starts as one of them (the first city) and conquers the others to build a kingdom.
-- Conquered cities join the player's kingdom, so the city economy presumably applies to the player's own territory too (to confirm).
+- Conquered cities join the player's kingdom, and pay taxes to the player. The city economy (trade, taxes, welfare, happiness) applies to them as part of the kingdom.
 - A city's army depends on its richness and on time. If we leave a city alone, it may spend money, grow and train its army, so it is stronger when we return.
 - Campaign time is turn-based (battles are real time; the campaign advances in turns). One turn is one season.
 - Time passes between battles and cities evolve, so timing of when to attack matters.
@@ -85,7 +85,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ## Open questions
 - Map: what does it show about each city (size, wealth, nation colour, distance)? Does the player see accurate or only rumoured info about enemy strength?
-- Conquest: what happens to a conquered city (income, tax rate, unrest, garrison)? Is there a win condition (all cities, a share of the map)? Can the player lose their own city?
+- Conquest: does the player set the tax rate and welfare spending per city? Can conquered cities rebel? Is there a win condition? Can the player lose a city?
 - Do cities conquer or fight each other, or do they only evolve on their own?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
