@@ -68,7 +68,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - World time always moves forward across runs. The game starts at year 1 (changed from the earlier "around AD 1000"; AD 1000 and AD 1015 in the examples below are just illustrations); if a run lasts 5 game years and the leader falls, the home screen shows AD 1015 (user's example), so the next run starts later in history, with a title such as "After the fall of X, new cities rose and a new leader rose from city X".
 - There is no end year; the calendar runs forever. The gap length is random with no fixed range.
 - The player always has at least one city. The last city is not immune: it can rebel based on taxes, but it is the home city of the king, so its population rebels less than the other cities.
-- If the home city rebels, the player gets one last chance to recapture it, using the small garrison army that is always kept in the home city (the main army is split when raiding other cities, so some units always stay behind). If the player loses that last battle, the city is lost; if it was the last city, the run ends: history records the fallen feudal leader, time passes, and a new leader rises again in a random city.
+- If the home city rebels, the player gets one last chance to recapture it, using the small garrison army that is always kept in the home city, in a normal real-time battle (garrison versus the rebel army) (the main army is split when raiding other cities, so some units always stay behind). If the player loses that last battle, the city is lost; if it was the last city, the run ends: history records the fallen feudal leader, time passes, and a new leader rises again in a random city.
 - The time gap between one run ending and the next starting is random, but long enough to be realistic for old cities to dissolve and new ones to be built (read as the gap between runs; "between turns" in the original note, to confirm).
 - The home screen shows the current year and this narrative title.
 - Losing the original city does not end the run; the run only ends when the army is lost completely.
@@ -127,4 +127,3 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Platform: iOS only, and only Apple Intelligence-capable devices are supported (iOS 26+). This guarantees the on-device Foundation Model is available for the order-parsing fallback and the history narrative, so no non-Apple-Intelligence fallback is needed.
 
 ## Open questions
-- Home city recapture: is it played as a normal real-time battle (garrison versus rebel army)?
