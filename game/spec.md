@@ -231,6 +231,7 @@ Each season the enemy AI allocates its income across training, recruiting, welfa
 - The enemy AI may accept (for example join the player), kill the messenger, send a message back, or offer gold in return for the player leaving. The enemy can try the same toward the player.
 - Provoked opponents may become aggressive and make mistakes.
 - Ambush and dirty work are allowed for both sides.
+- Parley is optional and never enforced. The player is hinted that it is possible (a short text hint when a target is chosen or a march is under way), and can ignore it.
 - Messenger speech is heard as bee-like buzzing with the words shown as text. Messengers are never drawn on screen.
 
 **Principle (from the notes): live logic, not mechanics.** There is no odds table, no personality-trait formula and no fixed penalties. The game defines only basic things: units, win and loss, and the few events it can carry out. How the other side thinks, trusts, bargains or lies is decided live by the on-device model, playing the enemy as a character.
