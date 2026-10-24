@@ -62,7 +62,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - A rebelling city gets its own army, built from its own economy.
 - Rebellion is gradual (unrest builds up over turns) and can be prevented by garrisoning troops in the city and by welfare spending.
 - Garrison troops are split off from the player's battle army, so every garrison weakens the army available for the next fight.
-- Garrisons cost upkeep every turn.
+- Garrisons and the field army both cost upkeep every turn.
 - Rebel cities get back their original colour.
 - A rebel army starts weak and hardens each turn (more training and strength), so reconquering sooner is easier. This pushes the player to act quickly against uprisings.
 - A city's army depends on its richness and on time. If we leave a city alone, it may spend money, grow and train its army, so it is stronger when we return.
