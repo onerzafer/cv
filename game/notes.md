@@ -67,7 +67,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - AI writes the history narrative (titles and log entries) from what happened in each run (leader, cities, outcome), using Apple's on-device Foundation Model (so it works offline and needs iOS 26+ on an Apple Intelligence device). The narrative is generated at the end of a run.
 - World time always moves forward across runs. The game starts at year 1 (changed from the earlier "around AD 1000"; AD 1000 and AD 1015 in the examples below are just illustrations); if a run lasts 5 game years and the leader falls, the home screen shows AD 1015 (user's example), so the next run starts later in history, with a title such as "After the fall of X, new cities rose and a new leader rose from city X".
 - There is no end year; the calendar runs forever. The gap length is random with no fixed range.
-- The player always has at least one city (so there is never an army without a city; how the last city is protected from loss is to confirm).
+- The player always has at least one city. The last city is not immune: it can rebel based on taxes, but it is the home city of the king, so its population rebels less than the other cities.
 - The time gap between one run ending and the next starting is random, but long enough to be realistic for old cities to dissolve and new ones to be built (read as the gap between runs; "between turns" in the original note, to confirm).
 - The home screen shows the current year and this narrative title.
 - Losing the original city does not end the run; the run only ends when the army is lost completely.
@@ -126,5 +126,5 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Platform: iOS only, and only Apple Intelligence-capable devices are supported (iOS 26+). This guarantees the on-device Foundation Model is available for the order-parsing fallback and the history narrative, so no non-Apple-Intelligence fallback is needed.
 
 ## Open questions
-- Last city: if the player always keeps at least one city, can the last city rebel or be taken (and the run ends only via losing the army), or is it simply immune?
+- If the home city does rebel, what happens (it counts as the end of the run, or the player keeps a new home city)? This conflicts with "always at least one city" and needs a rule.
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
