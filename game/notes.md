@@ -64,7 +64,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Garrison troops are split off from the player's battle army, so every garrison weakens the army available for the next fight.
 - Garrisons and the field army both cost upkeep every turn.
 - Unpaid upkeep (or unfed troops) causes desertion and lower morale. If it continues the player can lose the army completely.
-- Losing the army ends the run: the player vanishes from history as a failed feudal leader. If the player chooses to play again, a new leader appears somewhere else in the world (a new start, not a continuation). The new leader starts from a random location and the map is regenerated each run with new cities.
+- Losing the army ends the run: the player vanishes from history as a failed feudal leader. If the player chooses to play again, a new leader appears somewhere else in the world (a new start, not a continuation). The new leader starts from a random location and the map is regenerated each run with new cities. Each run is fully fresh: nothing carries over.
 - Rebel cities get back their original colour.
 - A rebel army starts weak and hardens each turn (more training and strength), so reconquering sooner is easier. This pushes the player to act quickly against uprisings.
 - A city's army depends on its richness and on time. If we leave a city alone, it may spend money, grow and train its army, so it is stronger when we return.
