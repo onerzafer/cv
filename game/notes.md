@@ -20,7 +20,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Movement is particle-based fluid dynamics: units flow around field obstacles (hills etc.).
 - Bigger dots can throw projectiles.
 - Pointy dots are spearmen. Strong against cavalry.
-- Cavalry: dots with rectangle horses (rectangle shape attached to the dot).
+- Cavalry: dots with rectangle horses (rectangle shape attached to the dot). Charge fast and break through lines.
 - Specially coloured dots can throw arrows (small projectiles).
 
 ### Opponent
