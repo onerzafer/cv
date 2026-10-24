@@ -20,6 +20,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - The same analysis also reads the tone/mood of what the player says and applies it to the army's morale:
   - Insulting or disrespectful orders (e.g. "useless sh*ts, attack") can have an adverse effect on morale.
   - Heroic or inspiring speech (e.g. "we came here to liberate these barbarians, save the slaves and protect the lands we have") raises morale and boosts certain dynamics.
+- Morale affects movement speed and cohesion (how tightly dots stay together).
 
 ### Units / visuals
 - Soldiers are tiny dots; no detail on soldiers.
@@ -49,4 +50,4 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ## Open questions
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
-- Morale: which dynamics does it affect (speed, cohesion, death chance, will to flee)? Does it decay over time?
+- Morale: does it decay or recover over time? Does it also affect death chance or fleeing?
