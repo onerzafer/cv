@@ -20,6 +20,7 @@ The player fantasy: being a commander who sees the field from above, gives order
 
 - **Campaign (turn-based, one turn is one season):** pick a target on the map of cities, spend money on training, recruits, upkeep and spies, set taxes and welfare, march (a march can take several seasons).
 - **Battle (real time, speed-up allowed):** an open-field fight on terrain taken from the target city's surroundings. There are no castles.
+- **Parley (before a battle or while marching, up to three rounds):** the player speaks a message to the enemy through the army. The enemy AI may accept, refuse, kill the messenger, counter-offer gold, or ambush. The enemy can do the same to the player. Messengers are heard as bee-like buzzing with the words as text, never seen.
 - **Run end:** victory (conquer every city), loss of the army, or loss of the last city. History is written and a new heir rises in a random city on the same world map.
 
 ## Scope in brief
@@ -33,7 +34,7 @@ The player fantasy: being a commander who sees the field from above, gives order
 
 - No single-unit management. The army fights on its own and the player only steers.
 - No castles, sieges or fixed-target battles.
-- No visible messengers, spy missions, spy deaths, order delay or intel confidence.
+- No visible messengers (parley is heard and read, never drawn), spy missions, spy deaths, order delay or intel confidence.
 - Cities never fight or conquer each other. The player is the only conqueror.
 - No progression carries between runs (no unlocks, army or money). Only the calendar and history persist, and history has no gameplay effect.
 - No detailed soldier art, and no player-chosen leader names.
@@ -54,6 +55,8 @@ The player fantasy: being a commander who sees the field from above, gives order
 
 ## Risks
 
+- **Parley exploits.** "Join me" or buy-off outcomes could bypass battles. They need low odds, clear costs and per-nation personalities.
+- **The model must not decide outcomes.** It reads tone and claims and phrases replies. Fixed rules, seeded, decide what happens, so results stay testable.
 - **Simulation cost.** Thousands of fluid-like particles with local combat on a phone is a feasibility risk. Needs an early prototype before the spec locks unit counts.
 - **On-device model limits.** Apple's model has a small context window and limited reasoning, so order parsing needs tight, structured prompts.
 - **Free-form speech ambiguity.** "Right wing" and "middle hold" must map to real groups reliably, including when the player is vague.

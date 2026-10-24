@@ -106,6 +106,13 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Campaign time is turn-based (battles are real time; the campaign advances in turns). One turn is one season.
 - Time passes between battles and cities evolve, so timing of when to attack matters.
 
+### Parley (messengers, diplomacy, dirty tricks)
+- Before a battle and while marching, the player can talk to the enemy in up to three rounds. The player does it by speaking to the army, for example "send a messenger to the enemy and tell them today you will die, or give me the city and join me and we conquer the world".
+- The enemy AI answers in its own way: it may accept (for example join the player), kill the messenger, send a message back, or offer gold in return for the player leaving. The enemy can try the same things toward the player.
+- Messages can provoke the opponent, who may become aggressive and make mistakes.
+- Ambush and dirty work are allowed for both sides, for fun.
+- The AI drives these decisions (the enemy's replies and choices). Messenger speech is heard as bee-like buzzing ("bzz biz biz biiizzz") with the words as text. Messengers are not shown on screen.
+
 ### City economy (simulated balance)
 - Cities earn money from trade and taxes, scaled by city size.
 - More money allows a bigger possible army and more trade, which feeds back into more money.
