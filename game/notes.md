@@ -44,6 +44,12 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - The delay is a fixed value, not shown to the player, purely a mechanic.
 - Because of the delay, this naturally hides the AI latency (Jev or fallback).
 
+### Training
+- Training can be applied per group and per unit.
+- Training changes the colour of the dots, so trained units are visibly distinct.
+- Trained groups are more expensive.
+- Trained groups react more easily to orders, are hard to demoralize and scare, move fast, and have a better chance to kill or hit the target.
+
 ### Opponent
 - Controlled by AI or algorithms.
 - Open field battle only, no castle or fixed target.
@@ -55,4 +61,4 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 ## Open questions
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
 - Morale: does it also affect death chance or fleeing, or only speed and cohesion?
-- Training: is it a single level per unit type or per group? What does it affect besides fear resistance?
+- Training: how many levels, and what is the colour scheme given that archers already use special colours? Does training cost money once or also upkeep?
