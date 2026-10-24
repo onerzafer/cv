@@ -16,6 +16,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Gestures: one finger touch and move pans the view; a two-finger swipe orders the army to move in that direction (advance towards the enemy or retreat from it, depending on direction); a two-finger pinch zooms out; spreading two fingers apart zooms in. Gesture orders go through the same order delay as speech.
 - There is no single-unit management: the army is clever enough to fight on its own, and the player only steers.
 - Camera: pan and zoom only change the view, never the orders.
+- Pan and zoom follow standard map-app conventions (Google Maps / Apple Maps). The two-finger swipe is the exception: it is the order gesture here. The view is fixed top-down, with no tilt or rotate, so those map gestures are not used.
 - Example commands: "middle hold", "right wing advance". Soldiers do as said.
 - Voice and text input are free-form natural language, not a fixed command vocabulary.
 - Apple's on-device Foundation Model (iOS 26+) analyses the free-form text and converts it into specific orders. Everything runs on-device, so no network is needed for order parsing. (Jev from TypeSafe AI was considered and dropped.)

@@ -10,7 +10,7 @@ The player fantasy: being a commander who sees the field from above, gives order
 
 ## Pillars
 
-1. **Speech is command.** Free-form voice or text, with no command list, plus touch: one finger pans the view, a two-finger swipe steers the army in that direction (advance or retreat), and pinch and spread zoom out and in. Apple's on-device model turns the words into orders and also reads their tone: an insult hurts morale, a heroic speech lifts it. Orders reach the army after a fixed, hidden delay, as if carried by horn, flag or rider.
+1. **Speech is command.** Free-form voice or text, with no command list, plus touch: one finger pans the view, a two-finger swipe steers the army in that direction (advance or retreat), and pinch and spread zoom out and in. Pan and zoom feel like Google or Apple Maps, but the view is fixed top-down with no tilt or rotate. Apple's on-device model turns the words into orders and also reads their tone: an insult hurts morale, a heroic speech lifts it. Orders reach the army after a fixed, hidden delay, as if carried by horn, flag or rider.
 2. **Combat emerges from the simulation.** Dots move as a particle fluid around terrain. Who dies depends on being surrounded and supported. Morale is local and spreads like fear, and training decides who holds. No scripted duels.
 3. **The economy balances itself.** Cities earn from trade and taxes and spend on armies and welfare. Heavy taxes and a big army breed unrest, and unrest breeds rebellion. The player sets tax and welfare per city.
 4. **Uncertainty everywhere.** Enemy training, plans and tactics are hidden and can only be inferred from behaviour or bought with spies. Spy reports are true but incomplete, and go stale after one season.
