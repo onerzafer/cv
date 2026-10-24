@@ -64,9 +64,9 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Enemy cities are not fully known on the map. The player can spend money on spies to learn more about a city's wealth, army and strength; without spies the information is partial.
 - Spies can reveal army size and composition, and also enemy tactics: fake retreats, forces hidden behind hills or under trees, a weak wing (e.g. right wing weakest against cavalry), etc.
 - The level of detail depends on how much money is spent.
-- Intelligence is probabilistic: spies can fail, die or be captured, and information can be wrong or leaked. This is hidden from the player and is only a randomization formula, with no visible spy missions, deaths or captures.
+- How much gets revealed is probabilistic: spies can fail, die or be captured, which limits what is learned (earlier wording also said information can be wrong or leaked; to confirm whether reports can be false, or only incomplete). This is hidden from the player and is only a randomization formula, with no visible spy missions, deaths or captures.
 - Tactics intel is delivered as a text report.
-- The enemy AI follows what the spies report: the reported tactics (fake retreat, hidden force, weak wing) are what the AI actually does in the battle.
+- The enemy's plan, tactics and city state are generated whether or not spies exist, and the enemy AI drives the battle from that information. Spies do not change anything; they only reveal part of it (AI plans, city state, tactics such as fake retreats, hidden forces, weak wings).
 - The player sees only the intel result, never a confidence hint or reliability indicator.
 - Intel goes stale after one turn (one season), so it has to be bought again to stay current.
 - Rising unrest is shown on the city itself on the map.
@@ -102,7 +102,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- When intel fails or leaks, does the report simply contain wrong details (so the AI does something different), or does the AI plan change?
+- Can a spy report be false, or is it always true but incomplete?
 - Map: what is visible about each city without spies (size, nation colour, distance)?
 - Is there a win condition? Other ways to lose besides losing the army (e.g. losing the original city)?
 - Do cities conquer or fight each other, or do they only evolve on their own?
