@@ -116,9 +116,10 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - The AI drives these decisions (the enemy's replies and choices). Messenger speech is heard as bee-like buzzing ("bzz biz biz biiizzz") with the words as text. Messengers are not shown on screen.
 
 ### Live logic scope
-- Live logic (decided by the on-device AI, not rule tables) applies to parley, enemy decisions, and spies.
-- The economy stays as plain code, with simple fixed rules.
-- The fluid movement, combat and the dots stay as code too.
+- The world runs on code: the campaign, the economy, the enemy rulers' choices, and spies (a simple randomization formula).
+- The battle simulation runs on code too (fluid movement, combat, morale).
+- Live logic from the on-device AI is for steering: the player steers by words and touch, the enemy commander steers its army with the AI, and parley is a live conversation. History narrative is AI-written.
+- City plans can be decided early if the player sends a spy; if not, they are decided at battle time.
 
 ### City economy (simulated balance)
 - Cities earn money from trade and taxes, scaled by city size.

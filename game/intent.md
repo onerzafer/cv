@@ -25,8 +25,9 @@ The player fantasy: being a commander who sees the field from above, gives order
 
 ## Where the AI decides and where code decides
 
-- **Live logic (on-device model):** parley and enemy replies, enemy rulers' seasonal choices, enemy commanders' orders in battle, and what spies bring back.
-- **Plain code:** the fluid movement, combat, morale, and the economy. The model is never in the simulation loop.
+- **Live logic (on-device model):** the player's words are parsed into orders; the enemy commander writes its plan and steers its army in battle; parley conversations; the history narrative.
+- **Plain code:** the world (campaign, economy, enemy rulers' choices, spies) and the battle simulation (fluid movement, combat, morale). The model is never in the simulation loop.
+- City plans are decided early if the player sends spies, and otherwise at battle setup.
 
 ## Scope in brief
 
@@ -60,7 +61,7 @@ The player fantasy: being a commander who sees the field from above, gives order
 
 ## Risks
 
-- **Model call volume.** Enemy rulers, commanders and spies all use the on-device model. Limit calls to cities that matter in a given season, and never block the simulation on the model.
+- **Model call volume.** The enemy commander and parley use the on-device model during a battle or approach. Never block the simulation on the model, and keep calls to the cities and battles that matter.
 - **Live logic is less predictable.** Parley is decided by the on-device model playing the enemy, with no rule tables. It can be inconsistent or too easy to sweet-talk, and runs cannot be replayed exactly. Mitigate with persona prompts and scenario testing, not with extra rules.
 - **Simulation cost.** Thousands of fluid-like particles with local combat on a phone is a feasibility risk. Needs an early prototype before the spec locks unit counts.
 - **On-device model limits.** Apple's model has a small context window and limited reasoning, so order parsing needs tight, structured prompts.
