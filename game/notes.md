@@ -55,6 +55,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ### Campaign / world
 - Win condition: conquer all the cities on the map.
+- Cities do not fight or conquer each other; they only evolve on their own (economy, army). The player is the only conqueror.
 - Victory shows an end screen. History records the feudal leader as the king; after the king's death, for some reason, the kingdom dissolves into new cities and a new game begins (a fresh run).
 - History: the history of this imaginary land is a running log of previous games, shown only as end-screen/home-screen narrative. It carries no gameplay effect.
 - AI writes the history narrative (titles and log entries) from what happened in each run (leader, cities, outcome), using Apple's on-device Foundation Model (so it works offline and needs iOS 26+ on an Apple Intelligence device). The narrative is generated at the end of a run.
