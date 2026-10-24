@@ -35,7 +35,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Bigger dots are catapults that throw rocks.
 - Pointy dots are spearmen. Strong against cavalry.
 - Cavalry: dots with rectangle horses (rectangle shape attached to the dot). Charge fast and break through lines.
-- Archers: dots with tiny cross lines (not coloured, so colour stays free for training level) that shoot arrows (small projectiles) from range.
+- Archers: dots with tiny cross lines (shape, not colour) that shoot arrows (small projectiles) from range.
 
 ### Scale and order delivery
 - Realistic scale: dots are people and the field is a couple of kilometres across.
@@ -47,14 +47,14 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ### Training
 - Training can be applied per group and per unit.
-- Training changes the colour of the dots, so trained units are visibly distinct.
-- On the player's own army, colour indicates training level. Unit type is shown by shape (pointy, rectangle horse, cross lines, bigger dot).
+- Training changes the shade of the dots, so trained units are visibly distinct.
+- Training level is shown as a shade of the player's nation colour. Unit type is shown by shape (pointy, rectangle horse, cross lines, bigger dot).
 - Trained groups are more expensive.
 - Trained groups react more easily to orders, are hard to demoralize and scare, move fast, and have a better chance to kill or hit the target.
 
 ### Opponent
 - Enemy armies are coloured per city or nation (faction identity), not by training. The player cannot see enemy training.
-- On the player's own army, colour means training level.
+- The player's army is also one of the nation colours. Training level is shown by the shade of that colour (not a different hue).
 - The player must infer enemy quality from behaviour: are units well spaced and aligned, small disorders, do they block each other when moving, do they panic or scare easily, etc.
 - Controlled by AI or algorithms.
 - Open field battle only, no castle or fixed target.
@@ -64,7 +64,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Colour palettes: player training colours must not clash with enemy city/nation colours. Is the player's army a fixed colour family?
+- Which nation colour is the player's: fixed or chosen? Can the enemy share it?
 - Do city/nation armies differ in composition or style (e.g. cavalry-heavy), not just colour?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
-- Training: how many levels, and what is the colour scheme? Does training cost money once or also upkeep?
+- Training: how many shade levels? Does training cost money once or also upkeep?
