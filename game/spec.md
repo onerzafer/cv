@@ -6,7 +6,7 @@ Next step after approval: `plans.md` (milestones and tasks).
 
 Convention used below:
 - **Decided** means it came from the notes. Where a rule is labelled this way, change it only by changing the notes.
-- **Proposed** means the notes were silent and I filled the gap with a default. Every proposed value is tunable and is collected in section 15 for you to confirm or change.
+- **Proposed** means the notes were silent and I filled the gap. Numeric tuning constants (stats, curves, percentages, sizes) appear in place and will live in one data file. Design proposals that change how the game plays are collected in section 15 for you to confirm or change.
 
 ---
 
@@ -66,6 +66,7 @@ Home screen -> Campaign map -> (select target) -> March -> Battle -> Campaign ma
 3. **March**: the player picks a target city. The army travels for one or more seasons, paying upkeep. The destination can be changed mid-march.
 4. **Battle**: starts when the army reaches the target. Real time with speed-up.
 5. **Resolution**: win, lose or retreat, then back to the campaign map.
+   A rebellion in the home city starts a battle directly: the garrison already in the city fights the rebel army (no march).
 6. **Run end**: victory end screen, or the fall of the leader. History is written, the calendar jumps ahead by a random gap, and the home screen shows the next run.
 
 ## 5. Campaign layer
@@ -87,7 +88,6 @@ Home screen -> Campaign map -> (select target) -> March -> Battle -> Campaign ma
 
 **Decided**
 - One turn is one season. Calendar year advances every four turns.
-- Battles run in real time and do not advance the calendar.
 - The calendar starts at year 1 on the very first run. Between runs it jumps ahead by a random number of years, long enough for cities to dissolve and new ones to be built. There is no end year.
 
 **Proposed**
@@ -283,11 +283,11 @@ Per dot per tick:
 enemy_contact = number of enemy dots within melee radius (capped)
 exposure      = fraction of the dot's surrounding angle covered by enemies (0..1)
 support       = number of friendly dots in the supporting arc behind and beside (normalised)
-p_death       = clamp( k_unit * enemy_contact * (1 + s * exposure) * (1 - t * attacker_training)
+p_death       = clamp( k_unit * enemy_contact * (1 + s * exposure) * (1 + t * attacker_training_mean)
                        / (1 + b * support) , 0, p_max )
 ```
 
-Cavalry charge adds a bonus to the attacker's value on the first contact tick and when speed is high. Spearmen apply a multiplier when the attacker is cavalry. Ranged attacks roll a hit chance from distance, target density and the attacker's training, and then apply the same `p_death` logic for the target.
+`attacker_training_mean` is the mean training level of the enemy dots in contact (or of the shooter for ranged attacks). Training does not make a dot harder to kill; it makes its group hit and kill more. Cavalry charge adds a bonus to the attacker's value on the first contact tick and when speed is high. Spearmen apply a multiplier when the attacker is cavalry. Ranged attacks roll a hit chance from distance, target density and the attacker's training, and then apply the same `p_death` logic for the target.
 
 ### 6.5 Morale
 
@@ -324,7 +324,7 @@ A fleeing group moves away from the nearest enemy and ignores new orders until m
 
 **Proposed**
 - The delay is a constant of battle time (for example 20 s). It runs on battle time, so speed-up shortens it in real time.
-- Trained groups subtract a few seconds from the delay at high levels.
+- The delay is the same for every group. Trained groups "react more easily" after the order arrives: faster turning and acceleration and less hesitation.
 - A new order replaces an older queued order for the same group once it arrives.
 
 ### 6.7 Enemy AI
@@ -392,10 +392,10 @@ A fleeing group moves away from the nearest enemy and ignores new orders until m
 - Two fingers pinching in zooms out; spreading them apart zooms in.
 - Pan and zoom follow Google Maps and Apple Maps conventions. The view is fixed top-down, with no tilt or rotate.
 - No single-unit management.
-- Touch orders go through the same order delay as speech (assumed).
 
 **Proposed**
-- The swipe applies to all groups whose centre lies in the swiped area; with no area (a swipe in empty space) it applies to the whole army. A visible faint arrow shows the order direction for the player's own army only, so the player can confirm it. It does not show the delay.
+- Touch orders go through the same order delay as speech.
+- The swipe applies to the groups whose centre lies in the swiped area. A swipe over no group applies to the whole army. No arrow or other cue appears before the order takes effect, so the hidden delay stays hidden.
 
 ## 8. History, lineage and narrative
 
@@ -492,4 +492,6 @@ I filled these because the notes did not say. Change any of them and I will upda
 9. Resume a run after closing the app; autosave each season.
 10. Deployment phase before the battle where the player places groups on their edge.
 11. Minimum home garrison size.
-12. Names of the groups the player can address (left wing, centre, right wing, cavalry, archers, catapults, reserve) and whether the player can rename or create groups.
+12. Touch: a two-finger swipe over no group applies to the whole army, and no cue appears before the order takes effect.
+13. Battles take no calendar time (the calendar advances only by seasons on the campaign map).
+14. Names of the groups the player can address (left wing, centre, right wing, cavalry, archers, catapults, reserve) and whether the player can rename or create groups.
