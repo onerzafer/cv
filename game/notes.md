@@ -59,6 +59,14 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Campaign time is turn-based (battles are real time; the campaign advances in turns). One turn is one season.
 - Time passes between battles and cities evolve, so timing of when to attack matters.
 
+### City economy (simulated balance)
+- Cities earn money from trade and taxes, scaled by city size.
+- More money allows a bigger possible army and more trade, which feeds back into more money.
+- The tax rate sets how favourable the population is toward the city/ruler.
+- A bigger army means less spending on welfare and services, so fewer people want to live there, which lowers income and eventually shrinks the army.
+- The intent is a simulated balance loop between size, wealth, army, taxes and population happiness, rather than scripted growth.
+- This runs every campaign turn (season) and is what makes a left-alone city stronger or weaker when we return.
+
 ### Opponent
 - Enemy armies are coloured per city or nation (faction identity), not by training. The player cannot see enemy training.
 - The player's army is also one of the nation colours. Training level is shown by the shade of that colour (not a different hue).
@@ -73,7 +81,9 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Campaign: how do cities earn and spend money (growth rules)? How does the player pick a target (map of cities)?
+- Campaign: how does the player pick a target (map of cities)?
+- City economy: does the same economy model apply to the player's own territory/base, or does the player only earn from winning battles?
+- Do cities conquer or fight each other, or do they only evolve on their own?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
 - Training: how many shade levels? Does training cost money once or also upkeep?
