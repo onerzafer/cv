@@ -55,6 +55,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 ### Opponent
 - Enemy armies are coloured per city or nation (faction identity), not by training. The player cannot see enemy training.
 - The player's army is also one of the nation colours. Training level is shown by the shade of that colour (not a different hue).
+- The player picks their own nation colour; the remaining colours are distributed among the other cities/nations (so the enemy never shares the player's colour).
 - The player must infer enemy quality from behaviour: are units well spaced and aligned, small disorders, do they block each other when moving, do they panic or scare easily, etc.
 - Controlled by AI or algorithms.
 - Open field battle only, no castle or fixed target.
@@ -64,7 +65,6 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Which nation colour is the player's: fixed or chosen? Can the enemy share it?
 - Do city/nation armies differ in composition or style (e.g. cavalry-heavy), not just colour?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
 - Training: how many shade levels? Does training cost money once or also upkeep?
