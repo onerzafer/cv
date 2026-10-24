@@ -123,7 +123,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ## Open questions
 - Calendar: is there a range for the gap between runs (e.g. 10-50 years)? Is there an end year, or can the calendar run forever? Does the Middle Ages setting (roughly AD 500-1500) matter for the year?
-- Lineage: is the leader's name/identity generated, can the player name them? What if a leader has no heir, or a victor king dies (also a son)?
+- Lineage: what if a leader has no heir? Does a victorious king's death follow the same succession as a fallen leader's?
 - Can a player be left with no cities but still an army, and keep playing?
 - Do cities conquer or fight each other, or do they only evolve on their own?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
