@@ -20,7 +20,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - The same analysis also reads the tone/mood of what the player says and applies it to the army's morale:
   - Insulting or disrespectful orders (e.g. "useless sh*ts, attack") can have an adverse effect on morale.
   - Heroic or inspiring speech (e.g. "we came here to liberate these barbarians, save the slaves and protect the lands we have") raises morale and boosts certain dynamics.
-- Morale affects movement speed and cohesion (how tightly dots stay together).
+- Morale affects movement speed, cohesion (how tightly dots stay together), and fleeing.
 - Morale is dynamic: it can decay, change, or recover over time (e.g. through events in the battle, not only speech).
 - Morale is local, not army-wide: a group that gets cornered can become fearful and disoriented while the rest of the army stays fine.
 - Fear spreads to nearby groups (contagion), so a local rout can cascade if neighbours are not well trained.
@@ -34,7 +34,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Bigger dots are catapults that throw rocks.
 - Pointy dots are spearmen. Strong against cavalry.
 - Cavalry: dots with rectangle horses (rectangle shape attached to the dot). Charge fast and break through lines.
-- Archers: specially coloured dots that shoot arrows (small projectiles) from range.
+- Archers: dots with tiny cross lines (not coloured, so colour stays free for training level) that shoot arrows (small projectiles) from range.
 
 ### Scale and order delivery
 - Realistic scale: dots are people and the field is a couple of kilometres across.
@@ -60,5 +60,5 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ## Open questions
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
-- Morale: does it also affect death chance or fleeing, or only speed and cohesion?
-- Training: how many levels, and what is the colour scheme given that archers already use special colours? Does training cost money once or also upkeep?
+- Morale: does it also affect death chance?
+- Training: how many levels, and what is the colour scheme? Does training cost money once or also upkeep?
