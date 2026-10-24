@@ -211,7 +211,7 @@ The whole world runs on plain code, including the economy for the player's citie
 
 **Decided**
 - Without spies information is partial. The player can pay for spies to reveal a city's wealth, army size and composition, and its tactics: fake retreats, hidden forces behind hills or under trees, a weak wing.
-- The enemy's plan, tactics and city state are generated whether or not spies exist and the AI follows them. Spies reveal; they do not change anything.
+- The enemy's plan and tactics exist for the AI to follow, and city state exists whether or not spies are sent. The plan is decided early if the player sends spies, and otherwise at battle time. Spies reveal; they do not change anything.
 - Detail depends on spending. Reports are always true but incomplete. How much is revealed is random.
 - Spies can fail, die or be captured. The player is told only when a spy is captured. Nothing else about spy missions is shown.
 - A captured spy can make the enemy AI react: change its plan or use what leaked. The report may then be out of date by battle time.
