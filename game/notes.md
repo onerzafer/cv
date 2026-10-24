@@ -13,6 +13,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 ### Controls
 - Only controls: a text box, finger gestures, or voice.
 - Voice: use on-device iOS models to capture voice and convert to text.
+- Gestures: a swipe over an area of the field advances the units in that area, or retreats them. (Gestures are order shortcuts; they go through the same order delay as speech.)
 - Example commands: "middle hold", "right wing advance". Soldiers do as said.
 - Voice and text input are free-form natural language, not a fixed command vocabulary.
 - Apple's on-device Foundation Model (iOS 26+) analyses the free-form text and converts it into specific orders. Everything runs on-device, so no network is needed for order parsing. (Jev from TypeSafe AI was considered and dropped.)
@@ -126,7 +127,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Platform: iOS only, and only Apple Intelligence-capable devices are supported (iOS 26+). This guarantees the on-device Foundation Model is available for the order-parsing fallback and the history narrative, so no non-Apple-Intelligence fallback is needed.
 
 ## Open questions
-- Gestures: listed as a control, but what do they do (pan/zoom the field, select groups, draw a path or formation)?
+- Gesture details: how is advance told apart from retreat (swipe direction toward or away from the enemy)? How does the player pan and zoom the field?
 - Run gap: read as the gap between runs ("between turns" in the original note), to confirm.
 - "Trained groups are more expensive": only the one-time training cost, or higher upkeep too?
 
