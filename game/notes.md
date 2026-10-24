@@ -59,7 +59,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Victory shows an end screen. History records the feudal leader as the king; after the king's death, for some reason, the kingdom dissolves into new cities and a new game begins (a fresh run).
 - History: the history of this imaginary land is a running log of previous games, shown only as end-screen/home-screen narrative. It carries no gameplay effect.
 - AI writes the history narrative (titles and log entries) from what happened in each run (leader, cities, outcome), using Apple's on-device Foundation Model (so it works offline and needs iOS 26+ on an Apple Intelligence device). The narrative is generated at the end of a run.
-- World time always moves forward across runs. The game starts around AD 1000; if a run lasts 5 game years and the leader falls, the home screen shows AD 1015 (user's example), so the next run starts later in history, with a title such as "After the fall of X, new cities rose and a new leader rose from city X".
+- World time always moves forward across runs. The game starts at year 1 (changed from the earlier "around AD 1000"; AD 1000 and AD 1015 in the examples below are just illustrations); if a run lasts 5 game years and the leader falls, the home screen shows AD 1015 (user's example), so the next run starts later in history, with a title such as "After the fall of X, new cities rose and a new leader rose from city X".
 - The time gap between one run ending and the next starting is random, but long enough to be realistic for old cities to dissolve and new ones to be built (read as the gap between runs; "between turns" in the original note, to confirm).
 - The home screen shows the current year and this narrative title.
 - Losing the original city does not end the run; the run only ends when the army is lost completely.
@@ -118,7 +118,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Platform: iOS only, and only Apple Intelligence-capable devices are supported (iOS 26+). This guarantees the on-device Foundation Model is available for the order-parsing fallback and the history narrative, so no non-Apple-Intelligence fallback is needed.
 
 ## Open questions
-- Calendar: is the AD 1000 start fixed? Is there a range for the gap (e.g. 10-50 years)?
+- Calendar: is there a range for the gap between runs (e.g. 10-50 years)? Is there an end year, or can the calendar run forever? Does the Middle Ages setting (roughly AD 500-1500) matter for the year?
 - Failed leaders: earlier note says they vanish from history, but the home screen narrative names the fallen leader and city. Do failed leaders appear in the log or not?
 - Which city does the new leader rise from, one of the new random cities?
 - Can a player be left with no cities but still an army, and keep playing?
