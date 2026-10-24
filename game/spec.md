@@ -1,6 +1,6 @@
 # Spec: Medieval Battle Strategy (working title)
 
-Status: draft for review.
+Status: approved. Date: 2026-10-24. The proposed values in section 15 were approved without changes, so they stand as accepted defaults and can still be changed.
 Inputs: `intent.md` (approved), `notes.md` (raw source).
 Next step after approval: `plans.md` (milestones and tasks).
 
@@ -512,7 +512,7 @@ Plan         { formation, wings, reserves, fakeRetreat, objective }
 7b. **Enemy rulers**: each season every enemy ruler's allocation respects gold, one training level per season, and travel cost.
 8. **Training**: levels rise by one per season; 50%, 75% and 90% loss thresholds change levels as specified; unpaid upkeep leaves levels untouched.
 9. **Run end**: each of the three endings produces a history entry and a new leader from the same lineage in a random new city at a later year.
-10. **Parley**: no more than three rounds are accepted; every enemy reply maps to one of the basic events; over a batch of scripted messages (insults, bluffs, bribes, offers to join) the enemy replies in character and the outcomes vary sensibly across messages and personas (a scenario check, not exact reproduction); an ambush starts the ambushed side out of formation.
+10. **Parley**: no more than three rounds are accepted; every enemy reply maps to one of the basic events; over a batch of scripted messages (insults, bluffs, bribes, offers to join) the enemy replies in character and the outcomes vary sensibly across messages and personas (a scenario check, not exact reproduction); an ambush is a starting situation only: the ambusher arrives first or concealed and the victim enters in march order. No cohesion or morale constants are added.
 11. **Performance**: the sim holds the frame-rate targets at the agreed dot counts on the reference device.
 12. **Preparation**: with the enemy arriving later, the player's "conceal" and "split" orders work; a group behind a hill or under trees is not visible to the enemy commander; the enemy commander is not told about groups it cannot see.
 
@@ -524,9 +524,9 @@ Plan         { formation, wings, reserves, fakeRetreat, objective }
 - Balance of hidden mechanics with no visible telemetry to the player.
 - Narrative quality from a small model; constrain by structured inputs.
 
-## 15. Proposed values to confirm
+## 15. Accepted defaults
 
-I filled these because the notes did not say. Change any of them and I will update the spec.
+The notes were silent on these, so they were proposed and then approved without changes. They stand as defaults and can be changed later.
 
 1. Currency called "gold".
 2. 12 to 20 cities per run.
@@ -539,7 +539,6 @@ I filled these because the notes did not say. Change any of them and I will upda
 9. Resume a run after closing the app; autosave each season.
 10. No separate deployment phase: the battle runs from the first army's arrival, and the player prepares during any gap. Cap on the gap length (a proposed tuning value).
 11. Minimum home garrison size.
-12. Live logic scope: parley is decided by the model with no rule tables. Should the same principle be applied to the rest of the game (see the question in chat)?
-13. Touch: a two-finger swipe over no group applies to the whole army, and no cue appears before the order takes effect.
-14. Battles take no calendar time (the calendar advances only by seasons on the campaign map).
-15. Names of the groups the player can address (left wing, centre, right wing, cavalry, archers, catapults, reserve) and whether the player can rename or create groups.
+12. Touch: a two-finger swipe over no group applies to the whole army, and no cue appears before the order takes effect.
+13. Battles take no calendar time (the calendar advances only by seasons on the campaign map).
+14. Names of the groups the player can address (left wing, centre, right wing, cavalry, archers, catapults, reserve) and whether the player can rename or create groups.

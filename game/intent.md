@@ -1,6 +1,6 @@
 # Intent: Medieval Battle Strategy (working title)
 
-Status: draft for review. Source of truth for details is `notes.md`; this document says why and what, and the spec will say how.
+Status: approved. Date: 2026-10-24. Source of truth for details is `notes.md`; this document says why and what, and the spec will say how.
 
 ## Vision
 
