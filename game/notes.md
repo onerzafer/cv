@@ -58,6 +58,8 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Cities do not fight or conquer each other; they only evolve on their own (economy, army). The player is the only conqueror.
 - Victory shows an end screen. History records the feudal leader as the king; after the king's death, for some reason, the kingdom dissolves into new cities and a new game begins (a fresh run).
 - History: the history of this imaginary land is a running log of previous games, shown only as end-screen/home-screen narrative. It carries no gameplay effect.
+- History records both fallen leaders and victors (this replaces the earlier note that failed leaders vanish from history).
+- Leaders are always the same lineage: each new leader is the son of the previous one ("son of X"), and rises from one of the new cities.
 - AI writes the history narrative (titles and log entries) from what happened in each run (leader, cities, outcome), using Apple's on-device Foundation Model (so it works offline and needs iOS 26+ on an Apple Intelligence device). The narrative is generated at the end of a run.
 - World time always moves forward across runs. The game starts at year 1 (changed from the earlier "around AD 1000"; AD 1000 and AD 1015 in the examples below are just illustrations); if a run lasts 5 game years and the leader falls, the home screen shows AD 1015 (user's example), so the next run starts later in history, with a title such as "After the fall of X, new cities rose and a new leader rose from city X".
 - The time gap between one run ending and the next starting is random, but long enough to be realistic for old cities to dissolve and new ones to be built (read as the gap between runs; "between turns" in the original note, to confirm).
@@ -87,7 +89,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Garrison troops are split off from the player's battle army, so every garrison weakens the army available for the next fight.
 - Garrisons and the field army both cost upkeep every turn.
 - Unpaid upkeep (or unfed troops) causes desertion and lower morale. If it continues the player can lose the army completely.
-- Losing the army ends the run: the player vanishes from history as a failed feudal leader. If the player chooses to play again, a new leader appears somewhere else in the world (a new start, not a continuation). The world map (land, terrain) is always the same; only the cities are placed at new random locations each run, and the new leader starts from one of them. No gameplay progress carries over between runs (no unlocks, army or money), but the world's calendar and history do (see History).
+- Losing the army ends the run: the player falls as a failed feudal leader (recorded in history as a fallen leader). If the player chooses to play again, a new leader appears somewhere else in the world (a new start, not a continuation). The world map (land, terrain) is always the same; only the cities are placed at new random locations each run, and the new leader starts from one of them. No gameplay progress carries over between runs (no unlocks, army or money), but the world's calendar and history do (see History).
 - Rebel cities get back their original colour.
 - A rebel army starts weak and hardens each turn (more training and strength), so reconquering sooner is easier. This pushes the player to act quickly against uprisings.
 - A city's army depends on its richness and on time. If we leave a city alone, it may spend money, grow and train its army, so it is stronger when we return.
@@ -119,8 +121,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ## Open questions
 - Calendar: is there a range for the gap between runs (e.g. 10-50 years)? Is there an end year, or can the calendar run forever? Does the Middle Ages setting (roughly AD 500-1500) matter for the year?
-- Failed leaders: earlier note says they vanish from history, but the home screen narrative names the fallen leader and city. Do failed leaders appear in the log or not?
-- Which city does the new leader rise from, one of the new random cities?
+- Lineage: is the leader's name/identity generated, can the player name them? What if a leader has no heir, or a victor king dies (also a son)?
 - Can a player be left with no cities but still an army, and keep playing?
 - Do cities conquer or fight each other, or do they only evolve on their own?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
