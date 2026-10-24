@@ -15,6 +15,10 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Voice: use on-device iOS models to capture voice and convert to text.
 - Example commands: "middle hold", "right wing advance". Soldiers do as said.
 - Voice and text input are free-form natural language, not a fixed command vocabulary.
+- A language model analyses the free-form text and converts it into specific orders (original note said "jev", likely means an LLM or on-device model, to confirm).
+- The same analysis also reads the tone/mood of what the player says and applies it to the army's morale:
+  - Insulting or disrespectful orders (e.g. "useless sh*ts, attack") can have an adverse effect on morale.
+  - Heroic or inspiring speech (e.g. "we came here to liberate these barbarians, save the slaves and protect the lands we have") raises morale and boosts certain dynamics.
 
 ### Units / visuals
 - Soldiers are tiny dots; no detail on soldiers.
@@ -35,3 +39,5 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
+- "jev": which model is meant (on-device iOS model, LLM, something else)?
+- Morale: which dynamics does it affect (speed, cohesion, death chance, will to flee)? Does it decay over time?
