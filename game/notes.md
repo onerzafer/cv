@@ -22,6 +22,8 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
   - Heroic or inspiring speech (e.g. "we came here to liberate these barbarians, save the slaves and protect the lands we have") raises morale and boosts certain dynamics.
 - Morale affects movement speed and cohesion (how tightly dots stay together).
 - Morale is dynamic: it can decay, change, or recover over time (e.g. through events in the battle, not only speech).
+- Morale is local, not army-wide: a group that gets cornered can become fearful and disoriented while the rest of the army stays fine.
+- How well a group resists fear depends on its training (trained units hold, untrained ones break), which links to spending money on training.
 
 ### Units / visuals
 - Soldiers are tiny dots; no detail on soldiers.
@@ -51,4 +53,5 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ## Open questions
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
-- Morale: does it also affect death chance or fleeing, or only speed and cohesion? What battle events change it (losses, being surrounded, winning)?
+- Morale: does it also affect death chance or fleeing, or only speed and cohesion? Does fear spread to nearby groups?
+- Training: is it a single level per unit type or per group? What does it affect besides fear resistance?
