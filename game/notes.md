@@ -56,7 +56,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 ### Campaign / world
 - Persistent world of cities/nations. The player chooses whether to go to war with a city; skipping a war is a valid choice.
 - A city's army depends on its richness and on time. If we leave a city alone, it may spend money, grow and train its army, so it is stronger when we return.
-- Campaign time is turn-based (battles are real time; the campaign advances in turns).
+- Campaign time is turn-based (battles are real time; the campaign advances in turns). One turn is one season.
 - Time passes between battles and cities evolve, so timing of when to attack matters.
 
 ### Opponent
@@ -73,7 +73,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Campaign: how long is a turn? How do cities earn and spend money (growth rules)? How does the player pick a target (map of cities)?
+- Campaign: how do cities earn and spend money (growth rules)? How does the player pick a target (map of cities)?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
 - Training: how many shade levels? Does training cost money once or also upkeep?
