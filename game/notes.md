@@ -38,6 +38,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Archers: dots with tiny cross lines (shape, not colour) that shoot arrows (small projectiles) from range.
 
 ### Scale and order delivery
+- Battles run in real time, and the player can speed time up.
 - Realistic scale: dots are people and the field is a couple of kilometres across.
 - Reactions are not immediate. The army is huge and responds slowly, like a real one.
 - Orders must be physically delivered in medieval ways: horns, flags, or horse messengers.
@@ -71,7 +72,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Campaign: how is time measured (turns, real time)? How do cities earn and spend money (growth rules)? How does the player pick a target (map of cities)?
+- Campaign: how is campaign time measured (turns, or real time that also speeds up)? How do cities earn and spend money (growth rules)? How does the player pick a target (map of cities)?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
 - Training: how many shade levels? Does training cost money once or also upkeep?
