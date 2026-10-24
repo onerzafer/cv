@@ -50,7 +50,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Training can be applied per group and per unit.
 - Training changes the shade of the dots, so trained units are visibly distinct.
 - Training level is shown as a shade of the player's nation colour. Unit type is shown by shape (pointy, rectangle horse, cross lines, bigger dot).
-- Training has 10 shade levels. Training costs money once (no ongoing training cost, though the army still pays normal upkeep) and takes one season. A group trains one level per season. Many groups and units can train in parallel; money is the only limit.
+- Training has 10 shade levels. Training costs money once (no ongoing training cost, though the army still pays normal upkeep) and takes one season. A group trains one level per season. Many groups and units can train in parallel; money is the only limit. Trained units lose their training only after heavy losses (unpaid upkeep does not remove training).
 - Trained groups are more expensive.
 - Trained groups react more easily to orders, are hard to demoralize and scare, move fast, and have a better chance to kill or hit the target.
 
@@ -128,4 +128,4 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Do cities conquer or fight each other, or do they only evolve on their own?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
-- Training: do trained units lose training if unpaid or after heavy losses? Does the cost rise with each level?
+- Training: does the cost rise with each level? What counts as heavy losses (a threshold), and how much training is lost?
