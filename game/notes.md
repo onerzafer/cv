@@ -55,6 +55,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ### Campaign / world
 - Win condition: conquer all the cities on the map.
+- Losing the original city does not end the run; the run only ends when the army is lost completely.
 - Persistent world of cities/nations. The player chooses whether to go to war with a city; skipping a war is a valid choice.
 - The player picks the target from a map of cities.
 - The map shows a world of small cities. The player starts as one of them (the first city) and conquers the others to build a kingdom.
@@ -108,7 +109,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Other ways to lose besides losing the army (e.g. losing the original city)? What happens at victory (end screen, new run)?
+- What happens at victory (end screen, new run)? Can a player be left with no cities but still an army, and keep playing?
 - Do cities conquer or fight each other, or do they only evolve on their own?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
