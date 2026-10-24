@@ -21,6 +21,7 @@ The player fantasy: being a commander who sees the field from above, gives order
 - **Campaign (turn-based, one turn is one season):** pick a target on the map of cities, spend money on training, recruits, upkeep and spies, set taxes and welfare, march (a march can take several seasons).
 - **Battle (real time, speed-up allowed):** an open-field fight on terrain taken from the target city's surroundings. There are no castles.
 - **Parley (before a battle or while marching, up to three rounds):** the player speaks a message to the enemy through the army. The enemy AI may accept, refuse, kill the messenger, counter-offer gold, or ambush. The enemy can do the same to the player. Messengers are heard as bee-like buzzing with the words as text, never seen.
+- **Before the fight:** if the enemy arrives later, the player has time to hide groups in hills or trees or split the army and place it on the flanks. There are no rules for it, only the player's judgement.
 - **Run end:** victory (conquer every city), loss of the army, or loss of the last city. History is written and a new heir rises in a random city on the same world map.
 
 ## Where the AI decides and where code decides

@@ -66,7 +66,7 @@ Home screen -> Campaign map -> (select target) -> March -> Battle -> Campaign ma
 2. **Campaign map**: the fixed world map with cities placed at random for this run. The player sets taxes, welfare, training, recruits and spies, then ends the season.
 3. **March**: the player picks a target city. The army travels for one or more seasons, paying upkeep. The destination can be changed mid-march.
 4. **Parley (optional)**: after a target is chosen and before the battle begins, including during a march, the player may send up to three messages to the enemy (section 5.12).
-5. **Battle**: starts when the army reaches the target. Real time with speed-up.
+5. **Battle**: the field comes into being when the first army arrives at the target. Real time with speed-up. If the other army has not arrived yet, the early army has time to prepare (section 6.8).
 6. **Resolution**: win, lose or retreat, then back to the campaign map.
    A rebellion in the home city starts a battle directly: the garrison already in the city fights the rebel army (no march).
 7. **Run end**: victory end screen, or the fall of the leader. History is written, the calendar jumps ahead by a random gap, and the home screen shows the next run.
@@ -204,7 +204,7 @@ The whole world runs on plain code, including the economy for the player's citie
 - A small garrison always stays in the home city.
 
 **Proposed**
-- Splitting happens on the campaign map. A split changes the group lists of both forces. Merging is allowed in the same city.
+- Splitting also happens in battle by order (section 6.8). On the campaign map it happens here. A split changes the group lists of both forces. Merging is allowed in the same city.
 - The home garrison cannot be reduced below a minimum (for example 5% of the starting army).
 
 ### 5.11 Spies and intel
@@ -271,7 +271,7 @@ The whole world runs on plain code, including the economy for the player's citie
 **Proposed**
 - Procedural height and obstacle map (hills, trees, water). The field is about 2 km by 2 km at 1 world unit per metre.
 - Hills slow movement and block line of sight for archers. Forests allow hidden reserves. Water blocks movement.
-- Both armies deploy on opposite edges. The player is the invader.
+- Armies enter the field from opposite edges as they arrive. The player is the invader.
 
 ### 6.2 Units
 
@@ -380,7 +380,10 @@ A fleeing group moves away from the nearest enemy and ignores new orders until m
 ### 6.8 Battle flow and end
 
 **Proposed** (the notes were silent):
-- Phases: deployment (free placement of groups on the player's edge), start, fight, end.
+- There is no separate deployment phase and no special rules for preparation. The battle runs in real time from the moment the first army arrives. If the enemy city's army arrives later than the player's, the player has that time to act: send a group to the hills or into the trees, divide the army in two and place the halves on the sides, or any other idea. It is the player's judgement and gut feeling; the game adds no rules, bonuses or timers for it. The same is true the other way: if the enemy is early, it may use the time, and the enemy commander (the model) decides what to do with it.
+- How long the gap lasts follows from where the two armies are on the campaign map when the battle triggers. It is turned into battle time by code and capped so a battle never starts with an unreasonably long wait (the cap is a proposed tuning value).
+- Visibility is plain code: a group on the far side of a hill, or under trees, is not seen by the other side. The enemy commander model is told only about enemy groups its side can see, so hidden groups really are hidden.
+- Groups can be split and merged during the battle by orders such as "divide the right wing in two".
 - A battle ends when one side has no organised groups left (all fled or dead), or when one side's remaining headcount falls under 10% of its start, or when the player orders a full retreat and the army leaves the field.
 - Winner earns gold equal to a share of the defeated city's wealth. The player's casualties come out of the army. A conquered city joins the kingdom and pays taxes.
 - Losing the home city's recapture battle loses the city. If that was the last city the run ends.
@@ -407,7 +410,7 @@ A fleeing group moves away from the nearest enemy and ignores new orders until m
 }
 @Generable struct Order {
     var group: GroupRef        // left wing, centre, right wing, cavalry, archers, catapults, reserve, all, or a named group
-    var action: Action         // advance, hold, retreat, attack, flank, withdraw, fireAtWill, holdFire, charge, regroup
+    var action: Action         // advance, hold, retreat, attack, flank, withdraw, fireAtWill, holdFire, charge, regroup, split, merge, conceal
     var direction: Direction?  // compass or relative to enemy (toward, away, left, right)
     var target: TargetRef?     // enemy group or map feature (hill, forest)
     var urgency: Urgency       // calm, normal, urgent
@@ -511,6 +514,7 @@ Plan         { formation, wings, reserves, fakeRetreat, objective }
 9. **Run end**: each of the three endings produces a history entry and a new leader from the same lineage in a random new city at a later year.
 10. **Parley**: no more than three rounds are accepted; every enemy reply maps to one of the basic events; over a batch of scripted messages (insults, bluffs, bribes, offers to join) the enemy replies in character and the outcomes vary sensibly across messages and personas (a scenario check, not exact reproduction); an ambush starts the ambushed side out of formation.
 11. **Performance**: the sim holds the frame-rate targets at the agreed dot counts on the reference device.
+12. **Preparation**: with the enemy arriving later, the player's "conceal" and "split" orders work; a group behind a hill or under trees is not visible to the enemy commander; the enemy commander is not told about groups it cannot see.
 
 ## 14. Risks carried into the plan
 
@@ -533,7 +537,7 @@ I filled these because the notes did not say. Change any of them and I will upda
 7. Failed or unclear order handling: show the interpreted result and ask before executing.
 8. Dots per side and target frame rates (set after the prototype).
 9. Resume a run after closing the app; autosave each season.
-10. Deployment phase before the battle where the player places groups on their edge.
+10. No separate deployment phase: the battle runs from the first army's arrival, and the player prepares during any gap. Cap on the gap length (a proposed tuning value).
 11. Minimum home garrison size.
 12. Live logic scope: parley is decided by the model with no rule tables. Should the same principle be applied to the rest of the game (see the question in chat)?
 13. Touch: a two-finger swipe over no group applies to the whole army, and no cue appears before the order takes effect.

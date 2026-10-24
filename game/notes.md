@@ -121,6 +121,10 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Live logic from the on-device AI is for steering: the player steers by words and touch, the enemy commander steers its army with the AI, and parley is a live conversation. History narrative is AI-written.
 - City plans can be decided early if the player sends a spy; if not, they are decided at battle time.
 
+### Before the battle
+- If the city's army arrives later than the player's, the player has time to set up strategies: send some groups to the hills or the trees, divide the army in two and place the halves on the sides, and so on.
+- No rules here, only the player's gut feeling. There is no deployment phase, bonus or timer for preparing.
+
 ### City economy (simulated balance)
 - Cities earn money from trade and taxes, scaled by city size.
 - More money allows a bigger possible army and more trade, which feeds back into more money.
