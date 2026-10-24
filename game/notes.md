@@ -31,6 +31,12 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Cavalry: dots with rectangle horses (rectangle shape attached to the dot). Charge fast and break through lines.
 - Archers: specially coloured dots that shoot arrows (small projectiles) from range.
 
+### Scale and order delivery
+- Realistic scale: dots are people and the field is a couple of kilometres across.
+- Reactions are not immediate. The army is huge and responds slowly, like a real one.
+- Orders must be physically delivered in medieval ways: horns, flags, or horse messengers.
+- Delivery takes time and depends on distance; this naturally hides the AI latency (Jev or fallback).
+
 ### Opponent
 - Controlled by AI or algorithms.
 - Open field battle only, no castle or fixed target.
@@ -40,6 +46,6 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Latency budget: how long between the player speaking and the army reacting?
+- Order delivery: can messengers/signals be intercepted or killed? Are different delivery methods faster or more reliable (horn vs flag vs rider)? Does terrain/weather affect them?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
 - Morale: which dynamics does it affect (speed, cohesion, death chance, will to flee)? Does it decay over time?
