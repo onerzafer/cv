@@ -65,9 +65,10 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Spies can reveal army size and composition, and also enemy tactics: fake retreats, forces hidden behind hills or under trees, a weak wing (e.g. right wing weakest against cavalry), etc.
 - The level of detail depends on how much money is spent.
 - Spy reports are always true but incomplete. How much gets revealed is probabilistic: spies can fail, die or be captured.
-- If a spy is captured, the enemy AI may react and change its plan or turn the leaked information to its own advantage, so intel gathered can end up slightly wrong by battle time (the report was true when written, not necessarily later). This is hidden from the player and is only a randomization formula, with no visible spy missions, deaths or captures.
+- If a spy is captured, the enemy AI may react and change its plan or turn the leaked information to its own advantage, so intel gathered can end up slightly wrong by battle time (the report was true when written, not necessarily later). Whether a spy was captured is known to the player. Everything else about spies stays hidden: no visible missions or deaths, only a randomization formula behind the reports.
 - Tactics intel is delivered as a text report.
 - The enemy's plan, tactics and city state are generated whether or not spies exist, and the enemy AI drives the battle from that information. Spies do not change anything; they only reveal part of it (AI plans, city state, tactics such as fake retreats, hidden forces, weak wings).
+- The enemy AI's adaptation is simulated with realistic conditions and limits: it needs money and time. For example, if it decides to train its army to cover a weakness and the player attacks right away, the training may not be finished and the weakness is still there.
 - The player sees only the intel result, never a confidence hint or reliability indicator.
 - Intel goes stale after one turn (one season), so it has to be bought again to stay current.
 - Rising unrest is shown on the city itself on the map.
@@ -103,7 +104,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Enemy reaction: how strongly does the AI adapt after a captured spy (small plan tweak, full counter-plan)? Is the capture visible to the player or hidden like everything else about spies?
+- Adaptation limits: what can the enemy change in one season (train, recruit, move forces, change tactics) and how is the cost/time modelled?
 - Map: what is visible about each city without spies (size, nation colour, distance)?
 - Is there a win condition? Other ways to lose besides losing the army (e.g. losing the original city)?
 - Do cities conquer or fight each other, or do they only evolve on their own?
