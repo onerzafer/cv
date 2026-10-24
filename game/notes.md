@@ -47,6 +47,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 ### Training
 - Training can be applied per group and per unit.
 - Training changes the colour of the dots, so trained units are visibly distinct.
+- Colour indicates training level only. Nothing else uses colour; unit type is shown by shape (pointy, rectangle horse, cross lines, bigger dot).
 - Trained groups are more expensive.
 - Trained groups react more easily to orders, are hard to demoralize and scare, move fast, and have a better chance to kill or hit the target.
 
@@ -59,6 +60,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
+- If colour means training only, how do we tell the player's army from the enemy's (shape outline, side of the field, brightness, a ring)?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
 - Morale: does it also affect death chance?
 - Training: how many levels, and what is the colour scheme? Does training cost money once or also upkeep?
