@@ -55,6 +55,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 
 ### Campaign / world
 - Win condition: conquer all the cities on the map.
+- Victory shows an end screen. History records the feudal leader as the king; after the king's death, for some reason, the kingdom dissolves into new cities and a new game begins (a fresh run).
 - Losing the original city does not end the run; the run only ends when the army is lost completely.
 - Persistent world of cities/nations. The player chooses whether to go to war with a city; skipping a war is a valid choice.
 - The player picks the target from a map of cities.
@@ -109,7 +110,8 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- What happens at victory (end screen, new run)? Can a player be left with no cities but still an army, and keep playing?
+- History: failed leaders vanish from history, while a victorious leader is recorded as king. Is that history shown only in the end screen narrative (nothing carried into the next run)?
+- Can a player be left with no cities but still an army, and keep playing?
 - Do cities conquer or fight each other, or do they only evolve on their own?
 - Can the player's own army grow or decay between battles (upkeep, feeding, desertion)?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
