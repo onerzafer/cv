@@ -36,7 +36,8 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Reactions are not immediate. The army is huge and responds slowly, like a real one.
 - Orders must be physically delivered in medieval ways: horns, flags, or horse messengers.
 - Messengers, horns and flags are not simulated entities. They are only a way of calculating the delay (no interception, no visible riders).
-- Delivery takes time and depends on distance; this naturally hides the AI latency (Jev or fallback).
+- The delay is a fixed value, not shown to the player, purely a mechanic.
+- Because of the delay, this naturally hides the AI latency (Jev or fallback).
 
 ### Opponent
 - Controlled by AI or algorithms.
@@ -47,6 +48,5 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 ## Open questions
-- Delay model: what inputs set the delay (distance from commander, delivery method, terrain, weather)? Is the delay shown to the player?
 - Fallback scope: should the on-device model also read mood/morale, or only extract orders?
 - Morale: which dynamics does it affect (speed, cohesion, death chance, will to flee)? Does it decay over time?
