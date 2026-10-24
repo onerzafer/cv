@@ -15,7 +15,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Voice: use on-device iOS models to capture voice and convert to text.
 - Example commands: "middle hold", "right wing advance". Soldiers do as said.
 - Voice and text input are free-form natural language, not a fixed command vocabulary.
-- A language model analyses the free-form text and converts it into specific orders using Jev from TypeSafe AI (user said "jev"; a structured-decision model: given state and typed questions it returns choices/scores/probabilities rather than free text; vendor-claimed 70-500ms latency; API, early access since Sept 2026). Note: Jev is a cloud API, so it is not on-device like the iOS voice capture; Apple Foundation Models (on-device, iOS 26+) is a candidate for the fallback.
+- A language model analyses the free-form text and converts it into specific orders using Jev from TypeSafe AI (user said "jev"; a structured-decision model: given state and typed questions it returns choices/scores/probabilities rather than free text; vendor-claimed 70-500ms latency; API, early access since Sept 2026). Note: Jev is a cloud API, so it is not on-device like the iOS voice capture; Apple Foundation Models (on-device, iOS 26+) is the fallback.
 - Network connectivity is acceptable during battle (Jev is the primary path), but there must be an on-device fallback model for order parsing when offline or Jev fails. The on-device model also reads mood and morale from the player's words, same as Jev.
 - The same analysis also reads the tone/mood of what the player says and applies it to the army's morale:
   - Insulting or disrespectful orders (e.g. "useless sh*ts, attack") can have an adverse effect on morale.
@@ -65,13 +65,13 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Leaders are always the same lineage: each new leader is a relative of the previous one: a son, daughter, cousin, uncle or similar. There is always an heir, always related (this replaces the earlier "son of X"). The new leader rises from one of the new cities.
 - Succession is the same whether the leader fell or won: everyone dies, early or late, and the next leader follows. It is only for the narrative, with no complex mechanic: a simple relationship picker, a gender picker and a name generator, using a simple but believable formula (nothing magical).
 - AI writes the history narrative (titles and log entries) from what happened in each run (leader, cities, outcome), using Apple's on-device Foundation Model (so it works offline and needs iOS 26+ on an Apple Intelligence device). The narrative is generated at the end of a run.
-- World time always moves forward across runs. The game starts at year 1 (changed from the earlier "around AD 1000"; AD 1000 and AD 1015 in the examples below are just illustrations); if a run lasts 5 game years and the leader falls, the home screen shows AD 1015 (user's example), so the next run starts later in history, with a title such as "After the fall of X, new cities rose and a new leader rose from city X".
+- World time always moves forward across runs. The game starts at year 1. The next run starts later in history after a random gap (the AD 1000 to AD 1015 figures in the original example are only illustrative). The home screen shows a title such as "After the fall of X, new cities rose and a new leader rose from city X".
 - There is no end year; the calendar runs forever. The gap length is random with no fixed range.
 - The player always has at least one city. The last city is not immune: it can rebel based on taxes, but it is the home city of the king, so its population rebels less than the other cities.
 - If the home city rebels, the player gets one last chance to recapture it, using the small garrison army that is always kept in the home city, in a normal real-time battle (garrison versus the rebel army) (the main army is split when raiding other cities, so some units always stay behind). If the player loses that last battle, the city is lost; if it was the last city, the run ends: history records the fallen feudal leader, time passes, and a new leader rises again in a random city.
 - The time gap between one run ending and the next starting is random, but long enough to be realistic for old cities to dissolve and new ones to be built (read as the gap between runs; "between turns" in the original note, to confirm).
 - The home screen shows the current year and this narrative title.
-- Losing the original city does not end the run; the run only ends when the army is lost completely.
+- A run ends in exactly three ways: the player conquers every city (victory), the army is lost completely, or the last city is lost. Losing the original city alone does not end the run.
 - Persistent world of cities/nations. The player chooses whether to go to war with a city; skipping a war is a valid choice.
 - The player picks the target from a map of cities.
 - The map shows a world of small cities. The player starts as one of them (the first city) and conquers the others to build a kingdom.
@@ -121,10 +121,13 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Open field battle only, no castle or fixed target.
 
 ### Economy / progression
-- As invaders, we earn money by winning battles.
+- Income comes from winning battles and from taxes paid by the cities the player holds.
 - Money is spent to train the army, recruit, or feed the soldiers.
 
 - Platform: iOS only, and only Apple Intelligence-capable devices are supported (iOS 26+). This guarantees the on-device Foundation Model is available for the order-parsing fallback and the history narrative, so no non-Apple-Intelligence fallback is needed.
 
 ## Open questions
-(none at the moment)
+- Gestures: listed as a control, but what do they do (pan/zoom the field, select groups, draw a path or formation)?
+- Run gap: read as the gap between runs ("between turns" in the original note), to confirm.
+- "Trained groups are more expensive": only the one-time training cost, or higher upkeep too?
+
