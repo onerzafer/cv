@@ -21,7 +21,7 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Bigger dots can throw projectiles.
 - Pointy dots are spearmen. Strong against cavalry.
 - Cavalry: dots with rectangle horses (rectangle shape attached to the dot). Charge fast and break through lines.
-- Specially coloured dots can throw arrows (small projectiles).
+- Archers: specially coloured dots that shoot arrows (small projectiles) from range.
 
 ### Opponent
 - Controlled by AI or algorithms.
