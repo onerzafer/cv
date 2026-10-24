@@ -10,7 +10,7 @@ The player fantasy: being a commander who sees the field from above, gives order
 
 ## Pillars
 
-1. **Speech is command.** Free-form voice or text, with no command list, plus swipe gestures over an area to advance or retreat the units there. Apple's on-device model turns the words into orders and also reads their tone: an insult hurts morale, a heroic speech lifts it. Orders reach the army after a fixed, hidden delay, as if carried by horn, flag or rider.
+1. **Speech is command.** Free-form voice or text, with no command list, plus touch: one finger pans the view, a two-finger swipe steers the army in that direction (advance or retreat), and pinch and spread zoom out and in. Apple's on-device model turns the words into orders and also reads their tone: an insult hurts morale, a heroic speech lifts it. Orders reach the army after a fixed, hidden delay, as if carried by horn, flag or rider.
 2. **Combat emerges from the simulation.** Dots move as a particle fluid around terrain. Who dies depends on being surrounded and supported. Morale is local and spreads like fear, and training decides who holds. No scripted duels.
 3. **The economy balances itself.** Cities earn from trade and taxes and spend on armies and welfare. Heavy taxes and a big army breed unrest, and unrest breeds rebellion. The player sets tax and welfare per city.
 4. **Uncertainty everywhere.** Enemy training, plans and tactics are hidden and can only be inferred from behaviour or bought with spies. Spy reports are true but incomplete, and go stale after one season.
@@ -31,6 +31,7 @@ The player fantasy: being a commander who sees the field from above, gives order
 
 ## Non-goals
 
+- No single-unit management. The army fights on its own and the player only steers.
 - No castles, sieges or fixed-target battles.
 - No visible messengers, spy missions, spy deaths, order delay or intel confidence.
 - Cities never fight or conquer each other. The player is the only conqueror.
@@ -58,6 +59,6 @@ The player fantasy: being a commander who sees the field from above, gives order
 - **Free-form speech ambiguity.** "Right wing" and "middle hold" must map to real groups reliably, including when the player is vague.
 - **Hidden-mechanics balance.** With delay, intel quality and enemy adaptation all hidden, tuning will need telemetry or playtest data.
 
-## Open items (carried from the notes)
+## Open items
 
-1. Gesture details: a swipe over an area advances or retreats the units there, but how is advance told apart from retreat, and how does the player pan and zoom the field?
+None at the moment.
