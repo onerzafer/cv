@@ -49,6 +49,7 @@ Out of scope: see the non-goals in `intent.md`.
 - Metal compute shaders for the battle particle simulation, with a CPU fallback path for tests.
 - Apple's on-device speech recognition for voice-to-text.
 - Local persistence (SwiftData or plain JSON files) with an autosave at the start of every season and when a battle begins.
+- The on-device model is used for: parsing the player's words, enemy rulers and commanders, spy reports, parley, and the history narrative. It is never in the simulation loop.
 - Modules: `Sim` (battle simulation), `Campaign` (world and economy rules), `Orders` (voice and text to structured orders), `Intel` (spies), `History` (log, lineage, narrative), `UI`.
 - `Sim` and `Campaign` are deterministic given a seed and contain no UI or model calls, so they can be unit tested and replayed.
 
@@ -145,7 +146,9 @@ clamped to [0, 1]
 size'        = size + g * (happiness - h0)       (growth or shrink)
 ```
 
-Each season the enemy AI allocates its income across training, recruiting, welfare and reserves using a simple priority list shaped by its nation profile. It can start at most one training queue per group and cannot exceed its gold.
+The economy above stays as plain code, for the player's cities and for enemy cities alike. What is live is the enemy's decisions. Each season the on-device model, playing a city's ruler, is given the city's state and gold and picks from a short menu of actions: train a group, recruit, set tax or welfare, move forces, keep gold in reserve. Code checks every choice against gold, one training level per season, and travel cost, and rejects anything the economy does not allow.
+
+To limit model calls (proposed), only cities near the player's army or kingdom, or currently involved in a march, parley or battle, make live decisions in a season. Other cities simply run the plain economy with no new decisions.
 
 ### 5.6 Taxes, welfare, unrest, rebellion
 
@@ -218,10 +221,13 @@ Each season the enemy AI allocates its income across training, recruiting, welfa
 - Intel goes stale after one season.
 - The enemy AI's reaction obeys the same economic limits as everything else: if it starts training to fix a weakness and the player attacks at once, the training is unfinished.
 
+**Principle: live logic for spies.** There are no reveal-probability tables or fixed capture curves. The truth about a city (its state, army, composition and tactics) is a set of true facts held by the game. The model, acting as the spy network, chooses which of those facts to bring back and how much, depending on how much gold the player spent and how the mission went.
+
 **Proposed**
-- Spending tiers: Tier 1 gives size and nation composition. Tier 2 adds wealth and army size. Tier 3 adds tactics (one or more items).
-- Each potential fact has a reveal probability that rises with spend. The roll uses a fixed seed per city and season so the same purchase gives the same result.
-- Capture chance rises as spending rises less than proportionally. A captured spy triggers a re-plan roll for the enemy AI. The AI may change one tactic or one wing's strength within what its economy permits.
+- The model can only choose from the list of true facts, which are given to it with IDs. The game then writes each chosen fact into the report as text. A report can therefore be incomplete but can never state something false.
+- The model also decides whether a spy fails, dies or is captured, and says so only if a spy is captured. The player is told about a capture and nothing else about the mission.
+- A captured spy tells the enemy's ruler model something. The ruler may adjust its plan or use what leaked, within what its economy and distance allow.
+- Intel is kept for one season and then discarded.
 
 ### 5.12 Parley (diplomacy and dirty tricks)
 
@@ -364,9 +370,11 @@ A fleeing group moves away from the nearest enemy and ignores new orders until m
 - Controlled by AI or algorithm. It follows the plan generated for its city (the same plan spies can reveal).
 - The player can only infer enemy quality from behaviour: spacing and alignment, disorder, blocking each other, panic.
 
-**Proposed**
-- A plan is data: `{ formation, wing strengths, reserves (location, trigger), fake_retreat (flag, trigger), objective }`.
-- Executed by a state machine per group, with each group issuing steering goals to the simulation. Untrained enemy groups get sloppier spacing, more jitter, and lower fear resistance. These are the cues the player reads.
+**Proposed** (live logic for enemy decisions)
+- When a battle is set up, the model playing the enemy commander writes the city's plan from the city's state and personality: formation, wing strengths, reserves, any planned fake retreat. This plan is the set of facts spies can later reveal.
+- During the battle the enemy commands its army the same way the player does: it issues orders in the same `Order` schema to its own groups, subject to the same hidden order delay. It decides again at intervals of battle time (for example every 15 to 20 s) and when something important happens (a group routs, a flank breaks). Between decisions groups keep their last orders.
+- If the model is slow or unavailable, the enemy keeps its last orders. The simulation never waits for the model.
+- The fluid movement, combat, and morale stay in code. Untrained enemy groups get sloppier spacing, more jitter, and lower fear resistance. These are the cues the player reads.
 
 ### 6.8 Battle flow and end
 
@@ -495,7 +503,8 @@ Plan         { formation, wings, reserves, fakeRetreat, objective }
 4. **Rout**: in a scripted scenario, an untrained group cornered on a flank routs, fear spreads to a neighbouring untrained group, and a trained neighbour holds.
 5. **Economy**: with fixed seeds, raising taxes lowers happiness and eventually causes rebellion; welfare and a garrison delay it; a left-alone enemy city is stronger after N seasons.
 6. **Rebellion**: a rebel city has its original colour and an army that grows each season; the home city rebels less than a normal city at equal settings.
-7. **Spies**: reports contain only true facts; repeated reports with the same spend vary in completeness; a captured spy is announced and can change the enemy plan; intel from last season is gone.
+7. **Spies**: every fact in a report is true (checked against the game's facts); reports differ in completeness with spend; a captured spy is announced and, over a batch of scenarios, can lead to changed enemy plans; intel from last season is gone.
+7a. **Enemy decisions**: every action chosen by an enemy ruler is valid against gold, training and travel rules; in-battle enemy orders always parse to the `Order` schema; a stalled model does not stall the simulation.
 8. **Training**: levels rise by one per season; 50%, 75% and 90% loss thresholds change levels as specified; unpaid upkeep leaves levels untouched.
 9. **Run end**: each of the three endings produces a history entry and a new leader from the same lineage in a random new city at a later year.
 10. **Parley**: no more than three rounds are accepted; every enemy reply maps to one of the basic events; over a batch of scripted messages (insults, bluffs, bribes, offers to join) the enemy replies in character and the outcomes vary sensibly across messages and personas (a scenario check, not exact reproduction); an ambush starts the ambushed side out of formation.

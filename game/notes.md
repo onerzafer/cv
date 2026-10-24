@@ -115,6 +115,11 @@ Raw capture of the game idea, in the order given. Not yet edited into intent/spe
 - Principle: no mechanics for this, only basic things (units, win and loss) and live logic: trust, personality and bargaining are decided live by the AI, not by rule tables.
 - The AI drives these decisions (the enemy's replies and choices). Messenger speech is heard as bee-like buzzing ("bzz biz biz biiizzz") with the words as text. Messengers are not shown on screen.
 
+### Live logic scope
+- Live logic (decided by the on-device AI, not rule tables) applies to parley, enemy decisions, and spies.
+- The economy stays as plain code, with simple fixed rules.
+- The fluid movement, combat and the dots stay as code too.
+
 ### City economy (simulated balance)
 - Cities earn money from trade and taxes, scaled by city size.
 - More money allows a bigger possible army and more trade, which feeds back into more money.

@@ -23,6 +23,11 @@ The player fantasy: being a commander who sees the field from above, gives order
 - **Parley (before a battle or while marching, up to three rounds):** the player speaks a message to the enemy through the army. The enemy AI may accept, refuse, kill the messenger, counter-offer gold, or ambush. The enemy can do the same to the player. Messengers are heard as bee-like buzzing with the words as text, never seen.
 - **Run end:** victory (conquer every city), loss of the army, or loss of the last city. History is written and a new heir rises in a random city on the same world map.
 
+## Where the AI decides and where code decides
+
+- **Live logic (on-device model):** parley and enemy replies, enemy rulers' seasonal choices, enemy commanders' orders in battle, and what spies bring back.
+- **Plain code:** the fluid movement, combat, morale, and the economy. The model is never in the simulation loop.
+
 ## Scope in brief
 
 - Units: soldiers (dot), spearmen (pointy, strong against cavalry), cavalry (dot with a rectangle horse, charges and breaks lines), archers (dot with tiny cross lines, ranged arrows), catapults (bigger dot, rocks).
@@ -55,6 +60,7 @@ The player fantasy: being a commander who sees the field from above, gives order
 
 ## Risks
 
+- **Model call volume.** Enemy rulers, commanders and spies all use the on-device model. Limit calls to cities that matter in a given season, and never block the simulation on the model.
 - **Live logic is less predictable.** Parley is decided by the on-device model playing the enemy, with no rule tables. It can be inconsistent or too easy to sweet-talk, and runs cannot be replayed exactly. Mitigate with persona prompts and scenario testing, not with extra rules.
 - **Simulation cost.** Thousands of fluid-like particles with local combat on a phone is a feasibility risk. Needs an early prototype before the spec locks unit counts.
 - **On-device model limits.** Apple's model has a small context window and limited reasoning, so order parsing needs tight, structured prompts.
