@@ -219,8 +219,6 @@ The whole world runs on plain code, including the economy for the player's citie
 - Intel goes stale after one season.
 - The enemy AI's reaction obeys the same economic limits as everything else: if it starts training to fix a weakness and the player attacks at once, the training is unfinished.
 
-**Principle: live logic for spies.** There are no reveal-probability tables or fixed capture curves. The truth about a city (its state, army, composition and tactics) is a set of true facts held by the game. The model, acting as the spy network, chooses which of those facts to bring back and how much, depending on how much gold the player spent and how the mission went.
-
 **Principle: spies are code.** The world runs on code, so spy results come from a simple randomization formula (the one in the notes), not from the model. The player sees only the result, plus the capture notice when a spy is caught.
 
 **Proposed**
