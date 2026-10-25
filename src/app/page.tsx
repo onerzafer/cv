@@ -275,7 +275,7 @@ const Home = () => {
             </ul>
           </div>
           <div className="rounded-lg p-6 bg-slate-100 dark:bg-slate-800">
-            <h2 className="text-xl font-bold mb-4">What my team says</h2>
+            <h2 className="text-xl font-bold mb-4">What people say</h2>
             <ul className="space-y-2">
               {voices.map((quote) => (
                 <li key={quote} className="italic">
@@ -289,6 +289,17 @@ const Home = () => {
             </p>
             <p className="mt-2 text-sm text-slate-500">
               Paraphrased from developers on my teams.
+            </p>
+            <blockquote className="mt-6 italic">
+              &ldquo;Your superpower is communication. Your engineering is
+              amazing too, but your communication makes things amazing. You lead
+              people so they become more, you leave room for them and you never
+              block them. Pragmatic but precise, with deep knowledge used
+              wisely, relentless curiosity and an analytical, experimental
+              mind.&rdquo;
+            </blockquote>
+            <p className="mt-2 text-sm text-slate-500">
+              Paraphrased from my manager&#39;s feedback.
             </p>
           </div>
           <div className="rounded-lg p-6 bg-slate-100 dark:bg-slate-800">
