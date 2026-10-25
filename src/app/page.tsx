@@ -255,6 +255,11 @@ const Home = () => {
               be.
             </p>
             <p>
+              What drives me is being a pioneer: going a few steps ahead,
+              experimenting, measuring and optimizing what works, then bringing
+              it back, sharing it and building a team that grows with it.
+            </p>
+            <p>
               At Whitebox, a regulated German fintech, I joined as principal
               engineer in 2023 and became stream head in August 2026. I ran the
               company experiment of one developer owning a new product end to

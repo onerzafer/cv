@@ -23,6 +23,10 @@ Working notes for the CV rewrite. Facts come from the owner; the page itself is 
 - Fully remote, Europe-based companies preferred. Company stage and size do not matter. Hands-on or lead. Permanent or contract engagement, billed monthly by hours worked through the owner's own company (max 40 h a week).
 - Wants a culture that is data-driven and treats engineering as a discipline: traceable, maintainable, not dependent on individual heroes.
 
+## What energizes the owner
+
+- Building things, forming and growing teams, and pioneering: going a few steps ahead to experiment, then bringing learnings back and sharing them. Always analytical: measure, then optimize.
+
 ## Open
 
 - Availability and the "available immediately" wording.
