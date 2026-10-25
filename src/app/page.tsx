@@ -452,7 +452,8 @@ const Home = () => {
             </ul>
           </div>
           <h2 className="text-3xl font-bold mb-4 pt-12">
-            Need an expert? I&#39;m available immediately!
+            Need an expert? I can start within a month, sooner depending on the
+            engagement.
           </h2>
           <div className="flex justify-start items-center h-full gap-1">
             <CallToAction subject="We need you!" primary>
