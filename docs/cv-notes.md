@@ -16,6 +16,7 @@ Working notes for the CV rewrite. Facts come from the owner; the page itself is 
 - **PR highlighter roadmap.** Next: automatic reviewer assignment based on the PR classification (classifier from typesafe.ai, called "jev"; planned, not built yet).
 - **New-product lesson.** The solo experiment delivered, but the owner judged it a failure as a process: not repeatable, knowledge concentrated in one person even with a knowledge hub. That led to the shared SDLC.
 - **Traceability outcome.** Requirements map one to one to tests, so nothing unbuilt or deviating slips through; ripple effects of a change are traceable across plans and PRs. Intent and spec phases align everyone early and capture stakeholders better; demos end with satisfied stakeholders expressing gratitude.
+- **Shift-left on wrong assumptions.** Without the intent and spec gate, a false claim gets built and only surfaces at the stakeholder demo: wasted tokens and lost time. With AI the loss is days or weeks, not months, but it is still the main waste the process removes.
 
 ## Target role
 
