@@ -5,62 +5,50 @@ import { CallToAction } from '@/components/call-to-action';
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Öner Zafer - Senior React Engineer',
+  title: 'Öner Zafer - Engineering Stream Head & Principal Engineer',
   description:
-    'Experienced senior React engineer with expertise in frontend development, TDD, and agile software development.',
+    'Principal engineer and stream head leading AI-native product teams. Shipped a new regulated product end to end with AI agents, and trained a fintech to work agent-first.',
   keywords:
-    'React, frontend engineer, TDD, agile software development, remote work',
+    'engineering leadership, stream head, principal engineer, agentic development, AI-native engineering, React, Next.js, TypeScript, fintech, remote work',
   authors: {
     name: 'Öner Zafer',
   },
 };
 
 const keySkills = [
+  'Agentic Development',
+  'Spec-Driven Development',
+  'Engineering Leadership',
   'React',
-  'JavaScript',
+  'Next.js',
   'TypeScript',
-  'Redux',
-  'CSS3',
-  'HTML5',
-  'Tailwind CSS',
+  'Ruby on Rails',
   'GraphQL',
-  'RESTful APIs',
-  'Git',
-  'Unit Testing (Jest, Enzyme, Testing Library)',
-  'Responsive Design',
-  'Agile Development',
-  'CI/CD',
+  'MCP & Agent Tooling',
+  'Temporal Workflows',
+  'Regulated Fintech',
   'Remote Work',
 ];
 
 const skills = [
-  'Angular',
-  'Vue',
-  'Next.js',
-  'React Native',
-  'Webpack',
-  'Babel',
-  'Sass/Less',
-  'Performance Optimization',
-  'Code Review',
-  'DevOps',
-  'Microservices',
-  'Serverless',
-  'Cloud Platforms (AWS, Azure)',
-  'Database Systems (SQL, NoSQL)',
-  'Containerization (Docker, Kubernetes)',
-  'Security Best Practices',
-  'Design Patterns',
-  'Architectural Principles',
-  'Technical Leadership',
-  'Team Collaboration',
-  'Problem Solving',
-  'Communication Skills',
-  'Agile Project Management',
-  'Client Interaction',
-  'Documentation',
-  'Presentation Skills',
+  'Coding agents (Junie, Zed, CLI agents)',
+  'Context files & agent skills',
+  'Agent review workflows',
+  'On-device & hosted LLMs',
+  'Tool use & memory (pgvector)',
+  'Node.js',
+  'Sorbet / Packwerk',
+  'Supabase / Postgres',
+  'Docker',
+  'CI/CD & SonarQube',
+  'Sentry / New Relic',
+  'Jest & Playwright',
+  'Tailwind CSS',
+  'Security & GDPR',
+  'Team Leadership',
   'Mentoring',
+  'Hiring & Onboarding',
+  'Technical Strategy',
 ];
 
 const links = [
@@ -79,6 +67,93 @@ const links = [
 ];
 
 const openFor = ['Full-time', 'Part-time', 'Contract', 'Consulting'];
+
+const highlights = [
+  {
+    title: 'A new product, end to end with AI',
+    text: 'A company experiment: one developer, with AI support, owns a new regulated product. It started from a kickoff and scribbles on a whiteboard. I designed the UX and UI, worked out the integration with a partner, and designed single sign-on between the two companies so customers need no extra login. The product is being prepared for launch. As a process the solo model failed, because the knowledge sat in one head and the work could not be repeated or parallelized, even with a knowledge hub. So I rolled out a shared SDLC and formed teams.',
+  },
+  {
+    title: 'Worklab: the software factory I built to ship it',
+    text: 'A folder-based kanban in Obsidian where each folder is a pipeline stage that runs a headless coding agent. Jira tickets are ingested, enriched, planned and split, built and tested, then land in my review with evidence such as screenshots. On my feedback it opens PRs and babysits them and the tickets. Every decision, plan and spec is kept as markdown, so the work is auditable. Hard rule: a PR merges only with green tests and a review with no open questions. A final stage quizzes me on what was built, so I can take over or maintain it at any time. Every night it reviews itself: it measures token cost, time to deployment and other KPIs, adjusts its own setup, and measures again the next evening. That cut token spend, swapped models, removed unneeded stages, improved the tests and shortened the wait on my desk. During the day it records my knowledge gaps and aims the quizzes at them, and it derives product facts into a wiki so every ticket can find its context. Agents message me, I message them, and they message each other to collaborate.',
+  },
+  {
+    title: 'AI-native transformation',
+    text: 'I advocated agent-first engineering, trained the company on it, and rolled out the AI-native SDLC from Anthropic to the teams: intent and spec first, then plans, then Jira tickets that agents keep up to date, with every artifact reviewed by a human. Five developers work this way. It turned solo work that stayed on a laptop and surfaced as huge PRs into shared work with small, flowing reviews, because the context is spread across the team and reviewers pair up with real knowledge of the change. The result is a repeatable, auditable practice that fits DORA and BaFin expectations. Shared agent guidance, workflows, skills and review rules live in the frontend repository, and a PR highlighter plugin I built speeds up review, the new bottleneck. It classifies each PR by impact radius, danger, customer exposure and money relevance, so the depth of review fits the risk: a quick scan of the key highlights or a full read.',
+  },
+  {
+    title: 'Three products, three teams',
+    text: 'As one of two stream heads I drive three products, including a back-office platform, and manage the teams behind them.',
+  },
+];
+
+const experience = [
+  {
+    company: 'Whitebox GmbH',
+    role: 'Stream Head',
+    period: 'Aug 2026 to now',
+    text: 'One of two stream heads. Driving three products and managing three teams in an AI-native way of working.',
+  },
+  {
+    company: 'Whitebox GmbH',
+    role: 'Principal Engineer',
+    period: 'Jun 2023 to Aug 2026',
+    text: 'Led the team technically, mentored, ran the agile ceremonies and the migration of a legacy system to modern React. Top frontend contributor for three years (800+ commits), release owner, and quality-gate builder: lint and naming rules, SonarQube as a breaking CI step, runtime env config, SCSS removal. Customer onboarding, identity verification and payment flows, and a new product line.',
+  },
+  {
+    company: 'AgyleOS GmbH, Berlin',
+    role: 'Technical Lead and Co-founder',
+    period: 'Jan 2020 to May 2023',
+    text: 'Co-founded a startup. Architected and built the frontend of a large-scale React HR application, ETL and data visualization on Airbyte and Cube.js with a self-developed formula language, and an SVG organigram builder. Built the team.',
+  },
+  {
+    company: 'Movingimage, ATU, Shoop (Berlin)',
+    role: 'Senior Frontend Engineer, Head of Frontend',
+    period: 'Oct 2016 to Jan 2020',
+    text: 'Video content management system and embeddable React video player at Movingimage, a car-part ordering app at ATU, and a web and mobile app plus a team of 5 as Head of Frontend at Shoop.',
+  },
+  {
+    company: 'Yemeksepeti (Delivery Hero), IKON Interactive',
+    role: 'Senior Software Developer',
+    period: 'Sep 2012 to Oct 2016',
+    text: 'The main food ordering app and a gamification panel, and smart TV, set-top-box and mobile apps for a major streaming service.',
+  },
+  {
+    company: 'Boğaziçi University, freelance',
+    role: 'Web developer and designer',
+    period: '2002 to 2012',
+    text: 'Dozens of websites on a self-built CMS and Drupal. M.S. in Software Engineering and B.Sc. in Physics, Boğaziçi University.',
+  },
+];
+
+const writing = [
+  {
+    title: 'Understanding Micro Frontends',
+    text: 'Over 50K reads on Hackernoon, and a talk at BerlinJS (around 100 attendees, 2019). Also a Redux-with-RxJS series.',
+    url: 'https://hackernoon.com/understanding-micro-frontends-b1c11585a297',
+  },
+];
+
+const projects = [
+  {
+    title: 'Sifir AI',
+    text: 'A side venture: make it a product, or fail and learn. An AI agency that ran the whole website-building workflow by talking to the customer over chat or voice, on durable Temporal agents (concierge, designer, coder) in sandboxed containers. Research agents helped me turn what an award jury rewards into a rubric that estimates a site\'s value, so each request was classified by tone and industry norms and held to a "$10K look". I turned design principles from architects and industrial designers, including space as a design element, into scoring formulas and calibrated them on over 1,000 award-winning sites until they matched my taste. Automated loops improved prompts and agent design until a cheap model satisfied that taste about 80% of the time, and controlled experiments (one agent or separate designer and coder, visual measurement, blind visual tests) verified or falsified each hypothesis. Bigger players moved faster than a side project could, so I shut it down and kept the learnings.',
+  },
+  {
+    title: 'Composer',
+    text: 'Born from Sifir. Agents may only pick components from a catalog and write JSON, and Composer compiles it to a custom-looking site, replacing browser testing with code-level JSON verification. Generated sites scored at $5K+ on my rubric, at roughly a dollar or less per site. MCP server, drift detection and a skill pack.',
+    url: 'https://github.com/onerzafer/composer',
+  },
+  {
+    title: 'Kingdom',
+    text: 'A medieval strategy and tactics game where you command armies of thousands of simulated soldiers by free text or voice instead of a command list. A language model turns orders and tone into actions; the world and battle simulation stay deterministic code, and the model is never in the simulation loop.',
+  },
+  {
+    title: 'Zero to Agentic Workflows',
+    text: 'A hands-on course that takes people from a first system prompt to autonomous agent loops.',
+    url: 'https://github.com/onerzafer/zero-to-agentic-workflows',
+  },
+];
 
 const Home = () => {
   return (
@@ -114,7 +189,9 @@ const Home = () => {
             <div className="flex align-middle justify-center gap-2 h-40">
               <div className="pt-10 pb-6 flex-1">
                 <h1 className="text-3xl font-bold">Öner Zafer</h1>
-                <p className="text-lg italic">Senior React Engineer</p>
+                <p className="text-lg italic">
+                  Stream Head &amp; Principal Engineer
+                </p>
                 <p className="text-lg flex align-middle justify-start gap-1 text-slate-500">
                   <MapPinIcon className="h5- w-5" /> Istanbul, Turkey
                 </p>
@@ -154,45 +231,102 @@ const Home = () => {
           </div>
           <div className="space-y-2">
             <p>
-              Over the course of nearly 20 years, I have amassed extensive
-              experience as an engineer. Throughout this period, I witnessed the
-              emergence of frontend frameworks and had the opportunity to work
-              with numerous ones. Specifically, I have been serving as a
-              Frontend engineer for the past 11 years, with a particular focus
-              on React since 2018. My enthusiasm for React remains unwavering,
-              although I am proficient in other frameworks as well.
+              I have been building for the web for more than twenty years, since
+              2002, mostly on the frontend, and I have not written a line of
+              code by hand for the past year. I work agent-first: I write the
+              specs, the context and the guardrails, and coding agents do the
+              typing. It changed what one engineer can ship, and what a team can
+              be.
             </p>
             <p>
-              Throughout my career, I have delivered successful projects while
-              working with diverse companies, teams, and roles. Notable
-              experiences include contributions to popular streaming services,
-              food delivery platforms, e-commerce solutions, and video content
-              management systems. Additionally, I co-founded and served as a
-              tech lead for a startup, gaining valuable insights into the entire
-              startup journey.
+              At Whitebox, a regulated German fintech, I joined as principal
+              engineer in 2023 and became stream head in August 2026. I ran the
+              company experiment of one developer owning a new product end to
+              end with AI support. It worked, so I onboarded more developers,
+              formed teams and spread the practice. Today I drive three products
+              and manage three teams.
             </p>
             <p>
-              My proficiency in web development and frontend engineering allows
-              me to develop robust and user-friendly applications, consistently
-              meeting project deadlines. Alongside my technical skills, I
-              possess strong mentorship capabilities, guiding and empowering
-              junior engineers for collective success.
+              I also build my own agent systems: a multi-tenant agent platform,
+              a compiler that turns LLM-written specs into code, and a course on
+              agentic workflows.
             </p>
             <p>
-              Having excelled in remote work environments, I am adept at
-              leveraging communication and collaboration tools to ensure
-              seamless coordination. I thrive in inclusive teams and am
-              committed to creating positive work environments.
+              If you want to move your engineering to an AI-native way of
+              working, or need someone who can lead teams and still ship,
+              let&#39;s connect.
             </p>
-            <p>
-              If you are a forward-thinking company seeking a senior or lead
-              React engineer for remote work, let&#39;s connect. Together, we
-              can create exceptional user experiences and drive technological
-              advancements.
-            </p>
-            <p>
-              I am excited to contribute my skills to your team&#39;s success.
-            </p>
+          </div>
+          <div className="rounded-lg p-6 bg-slate-100 dark:bg-slate-800">
+            <h2 className="text-xl font-bold mb-4">Highlights</h2>
+            <ul className="space-y-4">
+              {highlights.map((item) => (
+                <li key={item.title}>
+                  <h3 className="font-bold">{item.title}</h3>
+                  <p>{item.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-lg p-6 bg-slate-100 dark:bg-slate-800">
+            <h2 className="text-xl font-bold mb-4">Experience</h2>
+            <ul className="space-y-4">
+              {experience.map((item) => (
+                <li key={item.role}>
+                  <h3 className="font-bold">
+                    {item.role}, {item.company}{' '}
+                    <span className="font-light text-slate-500">
+                      {item.period}
+                    </span>
+                  </h3>
+                  <p>{item.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-lg p-6 bg-slate-100 dark:bg-slate-800">
+            <h2 className="text-xl font-bold mb-4">Own projects</h2>
+            <ul className="space-y-4">
+              {projects.map((item) => (
+                <li key={item.title}>
+                  <h3 className="font-bold">
+                    {item.url ? (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline"
+                      >
+                        {item.title}
+                      </a>
+                    ) : (
+                      item.title
+                    )}
+                  </h3>
+                  <p>{item.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-lg p-6 bg-slate-100 dark:bg-slate-800">
+            <h2 className="text-xl font-bold mb-4">Writing &amp; talks</h2>
+            <ul className="space-y-4">
+              {writing.map((item) => (
+                <li key={item.title}>
+                  <h3 className="font-bold">
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      {item.title}
+                    </a>
+                  </h3>
+                  <p>{item.text}</p>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="rounded-lg p-6 bg-slate-50 dark:bg-slate-600">
             <h2 className="text-xl font-bold mb-4">I&#39;m open for</h2>
@@ -208,44 +342,13 @@ const Home = () => {
             </div>
           </div>
           <div className="rounded-lg p-6 bg-slate-100 dark:bg-slate-800">
-            <h2 className="text-xl font-bold mb-4">What do I provide?</h2>
-            <ul className="list-decimal pl-6">
-              <li>
-                Provide expert guidance and mentorship in React and related
-                technologies.
-              </li>
-              <li>
-                Lead and inspire the team, fostering collaboration and high
-                morale.
-              </li>
-              <li>
-                Take ownership of projects and ensure their successful
-                execution.
-              </li>
-              <li>
-                Contribute to architectural design for scalable and maintainable
-                solutions.
-              </li>
-              <li>
-                Identify and resolve complex technical challenges efficiently.
-              </li>
-              <li>
-                Drive process improvement initiatives for increased efficiency.
-              </li>
-              <li>
-                Share knowledge and mentor junior developers for collective
-                growth.
-              </li>
-              <li>
-                Stay updated with the latest React trends to introduce new ideas
-                and techniques.
-              </li>
-            </ul>
-          </div>
-          <div className="rounded-lg p-6 bg-slate-100 dark:bg-slate-800">
             <h2 className="text-xl font-bold mb-4">How do I work?</h2>
             <div>
-              I have a company in Turkey, and I can work as a B2B contractor.
+              I work fully remote, with European teams and time zones, and I
+              know German work culture and regulation from years at a German
+              company. I invoice monthly through my own company in Turkey, based
+              on hours worked, up to 40 hours a week. Hands-on or leading, both
+              fine.
             </div>
             <h2 className="text-xl font-bold mb-4 mt-6">Benefits</h2>
             <ul className="list-disc pl-6">
