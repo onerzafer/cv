@@ -144,7 +144,7 @@ const writing = [
 
 const exploring = [
   'An always-on agent with a fixed context size, rebuilt each turn from memories, state and sensors, so it stays fresh but follows topic switches.',
-  'Diffusion-style feature development: agents refining a whole feature from rough to detailed instead of building it step by step.',
+  'Diffusion-style development, by analogy with diffusion models: the first pass delivers the whole solution end to end with placeholders and mocked responses, then each pass turns one piece into the real thing. Results show early, people align before tokens and time are spent, and the solution gets faster and cleaner with every pass.',
   'Generative UI from structured output.',
   'A modular, brain-inspired architecture that combines LLMs toward something like artificial consciousness.',
   'Embodied intelligence on an Anki Cozmo robot.',
