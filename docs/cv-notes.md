@@ -32,4 +32,3 @@ Working notes for the CV rewrite. Facts come from the owner; the page itself is 
 ## Open
 
 - Whether the 800+ commits figure is fine to publish.
-- Email: the Drive CV says `onerizafer@gmail.com`, the site button uses `onerzfr@gmail.com`.
