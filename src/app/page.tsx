@@ -68,6 +68,25 @@ const links = [
 
 const openFor = ['Full-time', 'Part-time', 'Contract', 'Consulting'];
 
+const consulting = [
+  {
+    title: 'AI-native SDLC rollout',
+    text: 'Intent, spec, plans and tracked tickets, with review gates and an audit trail your regulators and your engineers can live with. Your team runs it after I leave.',
+  },
+  {
+    title: 'Agentic delivery set-up',
+    text: 'Context files, agent skills, review workflows and the guardrails that keep agents productive and the work maintainable.',
+  },
+  {
+    title: 'Review as the new bottleneck',
+    text: 'Risk-based PR classification so review depth matches impact, with shared context so reviewers pair with real knowledge.',
+  },
+  {
+    title: 'Measuring agent quality',
+    text: 'Rubrics, metrics and experiments that show whether a model, prompt or agent design is actually better, before you pay for it at scale.',
+  },
+];
+
 const highlights = [
   {
     title: 'A new product, end to end with AI',
@@ -397,6 +416,22 @@ const Home = () => {
                 </div>
               ))}
             </div>
+          </div>
+          <div className="rounded-lg p-6 bg-slate-100 dark:bg-slate-800">
+            <h2 className="text-xl font-bold mb-4">Consulting</h2>
+            <p className="mb-4">
+              I help teams move to an AI-native way of working without losing
+              engineering discipline. Engagements have a clear scope and end
+              with a handover, not a dependency on me.
+            </p>
+            <ul className="space-y-4">
+              {consulting.map((item) => (
+                <li key={item.title}>
+                  <h3 className="font-bold">{item.title}</h3>
+                  <p>{item.text}</p>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="rounded-lg p-6 bg-slate-100 dark:bg-slate-800">
             <h2 className="text-xl font-bold mb-4">How do I work?</h2>
