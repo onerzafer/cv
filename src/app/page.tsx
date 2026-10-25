@@ -142,6 +142,14 @@ const writing = [
   },
 ];
 
+const exploring = [
+  'An always-on agent with a fixed context size, rebuilt each turn from memories, state and sensors, so it stays fresh but follows topic switches.',
+  'Diffusion-style feature development: agents refining a whole feature from rough to detailed instead of building it step by step.',
+  'Generative UI from structured output.',
+  'A modular, brain-inspired architecture that combines LLMs toward something like artificial consciousness.',
+  'Embodied intelligence on an Anki Cozmo robot.',
+];
+
 const projects = [
   {
     title: 'Sifir AI',
@@ -341,6 +349,14 @@ const Home = () => {
                   </h3>
                   <p>{item.text}</p>
                 </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-lg p-6 bg-slate-100 dark:bg-slate-800">
+            <h2 className="text-xl font-bold mb-4">Currently exploring</h2>
+            <ul className="list-disc pl-6 space-y-1">
+              {exploring.map((idea) => (
+                <li key={idea}>{idea}</li>
               ))}
             </ul>
           </div>
