@@ -87,6 +87,12 @@ const highlights = [
   },
 ];
 
+const voices = [
+  'I get amazing guidance. Whenever I am lost I can rely on you.',
+  'I was lost before. Now I know exactly what to do and how.',
+  'The trust you put in me encourages me to do more.',
+];
+
 const experience = [
   {
     company: 'Whitebox GmbH',
@@ -267,6 +273,23 @@ const Home = () => {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="rounded-lg p-6 bg-slate-100 dark:bg-slate-800">
+            <h2 className="text-xl font-bold mb-4">What my team says</h2>
+            <ul className="space-y-2">
+              {voices.map((quote) => (
+                <li key={quote} className="italic">
+                  &ldquo;{quote}&rdquo;
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4">
+              I watch people move from fear of breaking things to the courage to
+              take on bigger tasks, fail, learn and get better.
+            </p>
+            <p className="mt-2 text-sm text-slate-500">
+              Paraphrased from developers on my teams.
+            </p>
           </div>
           <div className="rounded-lg p-6 bg-slate-100 dark:bg-slate-800">
             <h2 className="text-xl font-bold mb-4">Experience</h2>
