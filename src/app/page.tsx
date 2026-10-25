@@ -91,6 +91,8 @@ const voices = [
   'I get amazing guidance. Whenever I am lost I can rely on you.',
   'I was lost before. Now I know exactly what to do and how.',
   'The trust you put in me encourages me to do more.',
+  'I do not always see your goal yet, but I trust you. Show the way and I will go with you.',
+  'I feel safe. I can talk to you about anything without fear of being judged.',
 ];
 
 const experience = [
