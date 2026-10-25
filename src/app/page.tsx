@@ -97,13 +97,13 @@ const voices = [
 
 const experience = [
   {
-    company: 'Whitebox GmbH',
+    company: 'Regulated German fintech',
     role: 'Stream Head',
     period: 'Aug 2026 to now',
     text: 'One of two stream heads. Driving three products and managing three teams in an AI-native way of working.',
   },
   {
-    company: 'Whitebox GmbH',
+    company: 'Regulated German fintech',
     role: 'Principal Engineer',
     period: 'Jun 2023 to Aug 2026',
     text: 'Led the team technically, mentored, ran the agile ceremonies and the migration of a legacy system to modern React. Top frontend contributor for three years (800+ commits), release owner, and quality-gate builder: lint and naming rules, SonarQube as a breaking CI step, runtime env config, SCSS removal. Customer onboarding, identity verification and payment flows, and a new product line.',
@@ -260,12 +260,12 @@ const Home = () => {
               it back, sharing it and building a team that grows with it.
             </p>
             <p>
-              At Whitebox, a regulated German fintech, I joined as principal
-              engineer in 2023 and became stream head in August 2026. I ran the
-              company experiment of one developer owning a new product end to
-              end with AI support. It worked, so I onboarded more developers,
-              formed teams and spread the practice. Today I drive three products
-              and manage three teams.
+              At a regulated German fintech, I joined as principal engineer in
+              2023 and became stream head in August 2026. I ran the company
+              experiment of one developer owning a new product end to end with
+              AI support. It worked, so I onboarded more developers, formed
+              teams and spread the practice. Today I drive three products and
+              manage three teams.
             </p>
             <p>
               I also build my own agent systems: a multi-tenant agent platform,
